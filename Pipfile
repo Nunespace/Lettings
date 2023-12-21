@@ -1,0 +1,20 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+django = "*"
+flake8 = "==3.7.0"
+pytest-django = "==3.9.0"
+six = "*"
+coverage = "*"
+pytest-cov = "*"
+sentry-sdk = {extras = ["django"], version = "*"}
+django-environ = "*"
+gunicorn = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.12"
