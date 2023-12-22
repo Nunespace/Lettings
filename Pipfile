@@ -13,6 +13,7 @@ pytest-cov = "*"
 sentry-sdk = {extras = ["django"], version = "*"}
 django-environ = "*"
 gunicorn = "*"
+django-heroku = "*"
 
 [dev-packages]
 

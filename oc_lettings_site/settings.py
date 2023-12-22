@@ -1,4 +1,5 @@
 import os
+import django-heroku
 import environ
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
@@ -37,7 +38,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = False if env("DEBUG", "development") == "production" else True
 
 # * pour permettre que DEBUG = False
 ALLOWED_HOSTS = ["*"]
@@ -141,3 +142,5 @@ STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     BASE_DIR / "static",
 ]
+
+django_heroku.settings(locals())
