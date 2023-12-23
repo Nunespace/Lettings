@@ -10,6 +10,7 @@ env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
 )
+environ.Env.read_env()
 
 sentry_sdk.init(
     dsn=env("DSN"),
@@ -20,9 +21,9 @@ sentry_sdk.init(
     # of sampled transactions.
     # We recommend adjusting this value in production.
     profiles_sample_rate=1.0,
-    #enable_tracing=True,
+    # enable_tracing=True,
     debug=False,
-    #environment="development",
+    # environment="development",
     integrations=[DjangoIntegration()],
 )
 
@@ -30,7 +31,13 @@ sentry_sdk.init(
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = Path(__file__).resolve().parent.parent
+# BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Set the project base directory
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# Take environment variables from .env file
+environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 
 # Quick-start development settings - unsuitable for production
@@ -96,6 +103,7 @@ WSGI_APPLICATION = "oc_lettings_site.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
@@ -139,17 +147,20 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-STATIC_ROOT = BASE_DIR / "staticfiles"
-#STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+# STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/static/"
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 STORAGES = {
     "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+        "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",
     },
 }
 
-#STATICFILES_DIRS = [BASE_DIR / "static", ]
-#STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# avec mise en cache : 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # sans mise en cache : 'whitenoise.storage.CompressedStaticFilesStorage'
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
+django_heroku.settings(locals(), staticfiles=False)
