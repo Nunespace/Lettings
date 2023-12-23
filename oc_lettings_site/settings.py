@@ -53,6 +53,7 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
+    "whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
     "lettings",
     "profiles",
@@ -136,14 +137,12 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [BASE_DIR / "static", ]
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
 # ou pour mise en cache :  "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-STATIC_URL = "/static/"
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+#STATICFILES_DIRS = [BASE_DIR / "static"]
 
 django_heroku.settings(locals())
