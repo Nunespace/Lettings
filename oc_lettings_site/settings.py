@@ -50,7 +50,7 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = False if env("DEBUG") == "production" else True
 
 # * pour permettre que DEBUG = False
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [".herokuapps.com", "localhost", "127.0.0.1"]
 
 
 # Application definition
