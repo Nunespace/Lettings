@@ -6,8 +6,10 @@ from sentry_sdk.integrations.django import DjangoIntegration
 from pathlib import Path
 
 # Initialise environment variables
-env = environ.Env()
-environ.Env.read_env()
+env = environ.Env(
+    # set casting, default value
+    DEBUG=(bool, False)
+)
 
 sentry_sdk.init(
     dsn=env("DSN"),
@@ -137,12 +139,17 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = BASE_DIR / "staticfiles"
+#STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/static/"
-STATICFILES_DIRS = [BASE_DIR / "static", ]
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-# ou pour mise en cache :  "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STORAGES = {
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
 
-#STATICFILES_DIRS = [BASE_DIR / "static"]
+#STATICFILES_DIRS = [BASE_DIR / "static", ]
+#STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+# sans mise en cache : 'whitenoise.storage.CompressedStaticFilesStorage'
 
 django_heroku.settings(locals())
