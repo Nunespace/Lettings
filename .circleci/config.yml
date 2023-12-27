@@ -18,6 +18,8 @@ jobs:
   build_and_test: # this can be any name you choose
     docker:
       - image: cimg/python:3.12.0
+    environment: 
+      DSN:'https://57308170faeed9ac552c37d085fec544@o4506343489601536.ingest.sentry.io/4506416631971840'
     steps:
       - checkout
       - python/install-packages:
