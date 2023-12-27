@@ -59,14 +59,18 @@ jobs:
 		  image: ubuntu-2204:2023.07.2
     steps:
       - checkout
+      - setup_remote_docker:
+          docker_layer_caching: true
       - run:
           name: Build and push Docker image to Heroku
           command: |
            sudo curl https://cli-assets.heroku.com/install.sh | sh
+           HEROKU_API_KEY=${HEROKU_TOKEN} heroku config:set SECRET_KEY=$SECRET_KEY -a $HEROKU_APP_NAME
+           HEROKU_API_KEY=${HEROKU_TOKEN} heroku config:set DSN=$DSN -a $HEROKU_APP_NAME
            HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:login
-           HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push ${HEROKU_APP_NAME} web
-           HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release ${HEROKU_APP_NAME} web
-
+           HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:push -a $HEROKU_APP_NAME web
+           HEROKU_API_KEY=${HEROKU_TOKEN} heroku container:release -a $HEROKU_APP_NAME web
+ 
 
 workflows:
   main:  # This is the name of the workflow, feel free to change it to better match your workflow.
