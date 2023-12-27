@@ -20,6 +20,7 @@ jobs:
       - image: cimg/python:3.12.0
     environment: 
       DSN:'https://57308170faeed9ac552c37d085fec544@o4506343489601536.ingest.sentry.io/4506416631971840'
+      SECRET_KEY: 'fp$9^593hsriajg$_%=5trot9g!1qa@ew(o-1#@=&4%=hp46(s'
     steps:
       - checkout
       - python/install-packages:
