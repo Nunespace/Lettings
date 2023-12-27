@@ -3,7 +3,7 @@ import environ
 #import django_heroku
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
-from pathlib import Path
+#from pathlib import Path
 from dotenv import load_dotenv
 
 
