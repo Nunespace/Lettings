@@ -1,27 +1,27 @@
-from dotenv import load_dotenv
 import os
 import environ
-
-# import django_heroku
+#import django_heroku
 import sentry_sdk
 from sentry_sdk.integrations.django import DjangoIntegration
 from pathlib import Path
+from dotenv import load_dotenv
 
 
 """
 # Initialise environment variables
-"""
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
 )
 environ.Env.read_env()
+"""
+load_dotenv()
 
 IS_HEROKU = "DYNO" in os.environ
 
 try:
     sentry_sdk.init(
-        dsn=env("DSN"),
+        dsn=os.environ["DSN"],
         # Set traces_sample_rate to 1.0 to capture 100%
         # of transactions for performance monitoring.
         traces_sample_rate=1.0,
@@ -35,40 +35,39 @@ try:
         integrations=[DjangoIntegration()],
         # If you wish to associate users to errors (assuming you are using
         # django.contrib.auth) you may enable sending PII data.
-        send_default_pii=True,
+        send_default_pii=True
     )
 except KeyError:
-    print(
-        "Sentry isn't running, because no 'SENTRY_DSN' was found in env variables."
-    )
+    print("Sentry isn't running, because no 'SENTRY_DSN' was found in env variables.")
 
 # api = falcon.API()
 
 
 #Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = Path(__file__).resolve().parent.parent
+#BASE_DIR = Path(__file__).resolve().parent.parent
 
 #Set the project base directory
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 # Take environment variables from .env file
-environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
 
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = os.environ["SECRET_KEY"]
+#SECRET_KEY = env("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = False if env("DEBUG") == "production" else True
+#DEBUG = False if env("DEBUG") == "production" else True
 if not IS_HEROKU:
     DEBUG = True
 
 # * pour permettre que DEBUG = False
-# ALLOWED_HOSTS = [*]
-# ALLOWED_HOSTS = [".herokuapp.com", "localhost", "127.0.0.1"]
+#ALLOWED_HOSTS = [*]
+#ALLOWED_HOSTS = [".herokuapp.com", "localhost", "127.0.0.1"]
 # Generally avoid wildcards(*). However since Heroku router provides hostname validation it is ok
 if IS_HEROKU:
     ALLOWED_HOSTS = ["*"]
@@ -85,7 +84,7 @@ INSTALLED_APPS = [
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
-    # "whitenoise.runserver_nostatic",
+    #"whitenoise.runserver_nostatic",
     "django.contrib.staticfiles",
     "lettings",
     "profiles",
@@ -174,22 +173,23 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATIC_URL = "/static/"
 
-#STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
-STATICFILES_DIRS = [BASE_DIR / "static", ]
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+#STATICFILES_DIRS = [BASE_DIR / "static", ]
+#STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
+
 
 STORAGES = {
     "staticfiles": {
         "BACKEND": "whitenoise.storage.CompressedStaticFilesStorage",},}
-"""
+
 
 
 # avec mise en cache : 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # sans mise en cache : 'whitenoise.storage.CompressedStaticFilesStorage'
 
 # django_heroku.settings(locals())
-# django_heroku.settings(locals(), staticfiles=False)
+#django_heroku.settings(locals(), staticfiles=False)
 
 if IS_HEROKU:
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
