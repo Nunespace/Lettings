@@ -49,12 +49,14 @@ jobs:
           name: build and push docker image
           command: |
             TAG=0.1.$CIRCLE_BUILD_NUM
-            docker build -t $DOCKER_USERNAME/$IMAGE_NAME:$TAG .
+            docker build -t $DOCKER_USERNAME/$IMAGE_NAME:latest --build-arg DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY} --build-arg DSN=${DSN} .
+            #docker build -t $DOCKER_USERNAME/$IMAGE_NAME:$TAG .
             echo $DOCKER_PASSWORD | docker login -u $DOCKER_USERNAME --password-stdin
             docker push $DOCKER_USERNAME/$IMAGE_NAME:$TAG
   
   deploy_on_heroku: # this can be any name you choose
-    machine: true
+    docker:
+      - image: cimg/python:3.12.0
     steps:
       - checkout
       - run:
