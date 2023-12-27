@@ -59,8 +59,7 @@ jobs:
 		  image: ubuntu-2204:2023.07.2
     steps:
       - checkout
-      - setup_remote_docker:
-          docker_layer_caching: true
+      - setup_remote_docker
       - run:
           name: Build and push Docker image to Heroku
           command: |
