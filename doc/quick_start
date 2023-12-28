@@ -1,0 +1,28 @@
+Démarrage rapide
+===================
+
+Avec le terminal et Python
+--------------------------
+
+Une fois le projet installé en local (voir Installation) :
+
+1. Démarrer l'application avec :
+```
+pipenv run python manage.py runserver
+```
+2. Ouvrez votre navigateur et entrez l’URL suivante : [http://127.0.0.1:8000/](http://127.0.0.1:8000/) comme indiqué sur le terminal pour démarrer l'application, ou taper : http://localhost:8000/
+
+3. Pour quitter le serveur, appuyez sur ` CTRL+C `
+
+Avec Docker
+-----------
+Aller sur https://hub.docker.com/search/?type=image&image_filter=official
+Dans la zone de recherche, taper nunespace/lettings
+Cliquer sur l'image puis sur l'onglet *Tags*
+Copier/coller la commande "Docker Pull Command" dans votre terminal
+Dans votre Docker Desktop, l'image se trouve alors dans Images/local
+Cliquer sur *Run*, donner un nom à votre conteneur et taper 8000 dans *host port*
+Cliquer sur *Run* puis sur *8000:8000*⁠
+
+
+
