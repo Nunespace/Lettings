@@ -24,12 +24,13 @@ jobs:
       - checkout
       - python/install-packages:
           pkg-manager: pipenv
-      - run:
-          name: Run tests
-          command: 
-            mkdir -p test-results/pytest
+       - run:
+          name: run tests
+          command: |
+            . venv/bin/activate
+            mkdir test-results
             pytest --junitxml=test-results/junit.xml
-            #pipenv run pytest # alternatively run `python -m pytest` if you are running vanilla pytest
+      
       - store_test_results:
           path: test-results
       - store_artifacts:
