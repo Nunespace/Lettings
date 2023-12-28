@@ -24,12 +24,10 @@ jobs:
       - checkout
       - python/install-packages:
           pkg-manager: pipenv
-       - run:
-          name: run tests
-          command: |
-            mkdir test-results
-            pipenv run pytest --junitxml=test-results/junit.xml
-      
+      - run:
+          name: Run tests
+          command: 
+            pipenv run pytest # alternatively run `python -m pytest` if you are running vanilla pytest
       - store_test_results:
           path: test-results
       - store_artifacts:
