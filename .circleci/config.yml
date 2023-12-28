@@ -26,7 +26,10 @@ jobs:
           pkg-manager: pipenv
       - run:
           name: Run tests
-          command: pipenv run pytest # alternatively run `python -m pytest` if you are running vanilla pytest
+          command: 
+            mkdir -p test-results/pytest
+            pytest --junitxml=test-results/junit.xml
+            #pipenv run pytest # alternatively run `python -m pytest` if you are running vanilla pytest
       - store_test_results:
           path: test-results
       - store_artifacts:
