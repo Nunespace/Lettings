@@ -27,8 +27,7 @@ jobs:
       - run:
           name: Run tests
           command: 
-            mkdir test-results
-            pipenv run pytest # alternatively run `python -m pytest` if you are running vanilla pytest
+            mkdir test-results && pipenv run pytest # alternatively run `python -m pytest` if you are running vanilla pytest
       - store_test_results:
           path: test-results
       - store_artifacts:
