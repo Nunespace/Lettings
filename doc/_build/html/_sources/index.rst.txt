@@ -6,23 +6,24 @@
 Welcome to Orange County Lettings's documentation!
 ==================================================
 
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+
 
 Openclassrooms
 Formation Développeur d'application Python 
 Projet n°13 : Mettez à l'échelle une application Django en utilisant une architecture modulaire
 
-Description du projet <description_projet>
-Installation du projet <installation>
-Guide de démarrage rapide <quick_start>
-Technologies et les langages de programmation à utiliser <technologies>
-Description de la structure de la base de données et des modèles de
-données<database_structure>
-Description des interfaces de programmation<api>
-Guide d’utilisation<user_guide>
-Procédures de déploiement et de gestion de l'application. <Procédures de déploiement et de gestion de l'application>
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   Description du projet <description_projet>
+   Installation du projet <installation>
+   Guide de démarrage rapide <quick_start>
+   Technologies et les langages de programmation à utiliser <technologies>
+   Description de la structure de la base de données et des modèles de données<database_structure>
+   Description des interfaces de programmation<api>
+   Guide d’utilisation<user_guide>
+   Procédures de déploiement et de gestion de l'application. <deployment_and_management>
 
 Indices and tables
 ==================

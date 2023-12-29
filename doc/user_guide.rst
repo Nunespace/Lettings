@@ -1,7 +1,7 @@
 Guide d’utilisation (avec des cas d’utilisation)
 ================================================
 
-Aller sur la page d'accueil, exemple : 
+Aller sur la page d'accueil,
 Consulter les profils : cliquer sur Profiles
 puis sur un profil pour accéder à son détail (Nom, ville favorite, etc)
 

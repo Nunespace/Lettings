@@ -23,5 +23,11 @@ language = 'fr'
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'alabaster'
+html_theme = 'classic'
+"""
+html_theme_options = {
+    "rightsidebar": "true",
+    "relbarbgcolor": "black"
+}
+"""
 html_static_path = ['_static']

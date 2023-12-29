@@ -39,10 +39,13 @@ SECRET_KEY=votre_clé_secrète_django
 DSN=votre_clé_DSN_sentry
 ``
 
+
 5. Démarrer l'application avec :
-```
-pipenv run python manage.py runserver
-```
+
+.. code-block:: console
+    
+    pipenv run python manage.py runserver
+
 6. Ouvrez votre navigateur et entrez l’URL suivante : [http://127.0.0.1:8000/](http://127.0.0.1:8000/) comme indiqué sur le terminal pour démarrer l'application.
 
 7. Pour quitter le serveur, appuyez sur ` CTRL+C `
