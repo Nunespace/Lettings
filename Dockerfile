@@ -9,6 +9,7 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 ARG SECRET_KEY
 ARG DSN
+# Les deux variavles SECRET_KEY et DSN Sont à retirer en cas de construction en local(développement)
 ENV SECRET_KEY=${SECRET_KEY}
 ENV DSN=${DSN}
 

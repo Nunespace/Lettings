@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+
+<html lang="fr" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Interface de programmation d’application (API) &#8212; Documentation Orange County Lettings </title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=4f649999" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=039e1c02" />
+    <script src="_static/documentation_options.js?v=d1a510d7"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/translations.js?v=d99ca74e"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Recherche" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="interface-de-programmation-dapplication-api">
+<h1>Interface de programmation d’application (API)<a class="headerlink" href="#interface-de-programmation-dapplication-api" title="Link to this heading">¶</a></h1>
+<p>Le code est construit avec le framework web Django.
+Il est composé de trois applications :
+- oc-lettings-site où se trouve le fichier settings.py du projet Django et qui comporte un fichier views gérant les errurs 404 et 500
+- lettings qui gèrent les modèles <em>Letting</em> et <em>Adress</em>
+- profiles qui gère le modèle <em>Profiles</em></p>
+<p>Pour utiliser l’interface de programmation (API)¶que Django met à disposition, il existe deux possiblités.</p>
+<section id="avec-le-shell-interactif-python">
+<h2>Avec le shell interactif Python<a class="headerlink" href="#avec-le-shell-interactif-python" title="Link to this heading">¶</a></h2>
+<p>Pour lancer un shell Python, utilisez cette commande à la racine du projet :</p>
+<p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">shell</span></code></p>
+<p>Une fois dans le shell, explorez l’API de base de données: <a class="reference external" href="https://docs.djangoproject.com/fr/5.0/intro/tutorial02/#playing-with-the-api">https://docs.djangoproject.com/fr/5.0/intro/tutorial02/#playing-with-the-api</a>
+Django automatise entièrement la création des interfaces d’administration pour les modèles.</p>
+</section>
+<section id="avec-le-site-dadministration-de-django">
+<h2>Avec le site d’administration de Django<a class="headerlink" href="#avec-le-site-dadministration-de-django" title="Link to this heading">¶</a></h2>
+<p>Les données de l’API peuvent être administrées par le super-utilisateur avec le site d’administration de Django.</p>
+<p>Pour créer un super-utilisateur et explorer les fonctionnalités de l’interface d’administration, visiter le site Django à cette adresse : <a class="reference external" href="https://docs.djangoproject.com/fr/5.0/intro/tutorial02/#introducing-the-django-admin">https://docs.djangoproject.com/fr/5.0/intro/tutorial02/#introducing-the-django-admin</a></p>
+<p><em>rem : Dans le cadre de la formation Python, un superutilisateur est déjà créé dans la base de données Sqlite3 du projet.</em></p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Orange County Lettings</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Cazenave.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.2.6</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="_sources/api.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -9,14 +9,13 @@ from sentry_sdk.integrations.django import DjangoIntegration
 # from pathlib import Path
 
 
-"""
+
 # Initialise environment variables
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False)
 )
-environ.Env.read_env()
-"""
+
 load_dotenv()
 
 IS_HEROKU = "DYNO" in os.environ
@@ -28,7 +27,7 @@ IS_HEROKU = "DYNO" in os.environ
 # Set the project base directory
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Take environment variables from .env file
+# Take environment variables from .env file to the root of the project
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 
