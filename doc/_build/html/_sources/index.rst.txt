@@ -21,7 +21,7 @@ Technologies et les langages de programmation à utiliser <technologies>
 Description de la structure de la base de données et des modèles de
 données<database_structure>
 Description des interfaces de programmation<api>
-Guide d’utilisation (avec des cas d’utilisation)<user_guide>
+Guide d’utilisation<user_guide>
 Procédures de déploiement et de gestion de l'application. <Procédures de déploiement et de gestion de l'application>
 
 Indices and tables

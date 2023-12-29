@@ -1,5 +1,5 @@
-Guide d’utilisation (avec des cas d’utilisation)
-================================================
+Guide d’utilisation
+===================
 
 Aller sur la page d'accueil, exemple : 
 Consulter les profils : cliquer sur Profiles
@@ -10,4 +10,4 @@ puis sur une location pour accéder à son adresse
 
 Chaque page dispose d'un accueil(Home) et/ou retour (back)
 
-.. image:: demo.mp4
+.. video:: demo.mp4
