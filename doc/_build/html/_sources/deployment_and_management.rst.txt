@@ -26,19 +26,22 @@ Déploiement de l'application à l'aide de la pipeline CI/CD de circleci
 DOCKER_PASSWORD	votre_mot_de_pass_dockerhub	
 DOCKER_USERNAME	votre identifiant_dockerhub	
 DSN	            votre_cké_sentry-DSN	
-HEROKU_APP_NAME	nom_de_votre_application_heroku .. exemple : lettings		
+HEROKU_APP_NAME	nom_de_votre_application_heroku		
 HEROKU_TOKEN	voir_ci_dessous_pour_l_obtenir
 IMAGE_NAME	    ex:_lettings_image
 SECRET_KEY	    votre_clé_secrète_django
 ===============================================
+
+HEROKU_APP_NAME : Exemple : lettings
+
 *pour obtenir HEROKU_TOKEN, taper dans votre terminal* : 
 ``heroku authorizations:create``
 *Cela va récupérer un jeton, que vous devez utiliser comme variable HEROKU-TOKEN*
 
 4 - La pipeline se lance dès sa création puis à chaque commit sur git hub.
 
-Le site web est alors en ligne à cette url : <https://nom_de_votre_application-nombre_attribué_par_heroku.herokuapp.com/>`_
-Exemple : <https://lettings-972532108750.herokuapp.com/>`_
+Le site web est alors en ligne à cette url : https://nom_de_votre_application-nombre_attribué_par_heroku.herokuapp.com/
+Exemple : https://lettings-972532108750.herokuapp.com/
 
 
 Gestion de l'application
@@ -46,14 +49,14 @@ Gestion de l'application
 
 Surveillance des erreurs
 Sentry est utilisé comme outil de surveillance des erreurs. 
-Chaque erreur est répertoriée dans le dossier *Issues* du projet sur votre compte **Sentry** : <https://sentry.io>`_
+Chaque erreur est répertoriée dans le dossier *Issues* du projet sur votre compte `**Sentry** : <https://sentry.io>`_
 
 
 Gestion de la base de données
 -----------------------------
 
 1 - Les données de l'API peuvent être administrées par le super-utilisateur avec le site d'administration de Django : <https://heroku_app_name-nombre_attribué_par_heroku.herokuapp.com/admin/>`_
-Exemple : <https://lettings-972532108750.herokuapp.com/admin/>`_
+Exemple : https://lettings-972532108750.herokuapp.com/admin/
 
 2 - Entrer votre identifiant et votre mot de passe pour accéder au site d'administration de Django : ce site permet de gérer toutes les opérations [CRUD](<https://openclassrooms.com/fr/courses/7172076-debutez-avec-le-framework-django/7516605-effectuez-des-operations-crud-dans-ladministration-de-django>`_) sur les ressources de l'API.
 
@@ -61,3 +64,4 @@ Exemple : <https://lettings-972532108750.herokuapp.com/admin/>`_
 Voir également le chapitre :doc:`Interface de programmation d’application <api>`
 
 -Dans le cadre de la formation Python, un superutilisateur est déjà créé dans la base de données Sqlite3 du projet.*
+

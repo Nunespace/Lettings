@@ -5,34 +5,34 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Procédures de déploiement et de gestion de l’application &#8212; Documentation Orange County Lettings </title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=514cf933" />
-    
+    <title>Procédures de déploiement et de gestion de l’application &#8212; Documentation Orange County Lettings - OC-Formation Python </title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/agogo.css?v=47acb022" />
     <script src="_static/documentation_options.js?v=d1a510d7"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/translations.js?v=d99ca74e"></script>
-    
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
     <link rel="prev" title="Guide d’utilisation (avec des cas d’utilisation)" href="user_guide.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="Index général"
-             accesskey="I">index</a></li>
-        <li class="right" >
+    <div class="header-wrapper" role="banner">
+      <div class="header">
+        <div class="headertitle"><a
+          href="index.html">Documentation Orange County Lettings - OC-Formation Python </a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
           <a href="user_guide.html" title="Guide d’utilisation (avec des cas d’utilisation)"
-             accesskey="P">précédent</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Documentation Orange County Lettings </a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Procédures de déploiement et de gestion de l’application</a></li> 
-      </ul>
-    </div>  
+             accesskey="P">précédent</a> |
+          <a href="genindex.html" title="Index général"
+             accesskey="I">index</a>
+        </div>
+       </div>
+    </div>
 
-    <div class="document">
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
       <div class="documentwrapper">
         <div class="bodywrapper">
           <div class="body" role="main">
@@ -57,29 +57,30 @@
 <p>DOCKER_PASSWORD votre_mot_de_pass_dockerhub
 DOCKER_USERNAME votre identifiant_dockerhub
 DSN                 votre_cké_sentry-DSN
-HEROKU_APP_NAME nom_de_votre_application_heroku .. exemple : lettings
+HEROKU_APP_NAME nom_de_votre_application_heroku
 HEROKU_TOKEN    voir_ci_dessous_pour_l_obtenir
 IMAGE_NAME          ex:_lettings_image
 SECRET_KEY          votre_clé_secrète_django
-===============================================
-<em>pour obtenir HEROKU_TOKEN, taper dans votre terminal</em> :
+===============================================</p>
+<p>HEROKU_APP_NAME : Exemple : lettings</p>
+<p><em>pour obtenir HEROKU_TOKEN, taper dans votre terminal</em> :
 <code class="docutils literal notranslate"><span class="pre">heroku</span> <span class="pre">authorizations:create</span></code>
 <em>Cela va récupérer un jeton, que vous devez utiliser comme variable HEROKU-TOKEN</em></p>
 <p>4 - La pipeline se lance dès sa création puis à chaque commit sur git hub.</p>
-<p>Le site web est alors en ligne à cette url : &lt;<a class="reference external" href="https://nom_de_votre_application">https://nom_de_votre_application</a>-nombre_attribué_par_heroku.herokuapp.com/&gt;`_
-Exemple : &lt;<a class="reference external" href="https://lettings-972532108750.herokuapp.com/">https://lettings-972532108750.herokuapp.com/</a>&gt;`_</p>
+<p>Le site web est alors en ligne à cette url : <a class="reference external" href="https://nom_de_votre_application">https://nom_de_votre_application</a>-nombre_attribué_par_heroku.herokuapp.com/
+Exemple : <a class="reference external" href="https://lettings-972532108750.herokuapp.com/">https://lettings-972532108750.herokuapp.com/</a></p>
 </section>
 </section>
 <section id="gestion-de-l-application">
 <h2>Gestion de l’application<a class="headerlink" href="#gestion-de-l-application" title="Link to this heading">¶</a></h2>
 <p>Surveillance des erreurs
 Sentry est utilisé comme outil de surveillance des erreurs.
-Chaque erreur est répertoriée dans le dossier <em>Issues</em> du projet sur votre compte <strong>Sentry</strong> : &lt;<a class="reference external" href="https://sentry.io">https://sentry.io</a>&gt;`_</p>
+Chaque erreur est répertoriée dans le dossier <em>Issues</em> du projet sur votre compte <a class="reference external" href="https://sentry.io">**Sentry** :</a></p>
 </section>
 <section id="gestion-de-la-base-de-donnees">
 <h2>Gestion de la base de données<a class="headerlink" href="#gestion-de-la-base-de-donnees" title="Link to this heading">¶</a></h2>
 <p>1 - Les données de l’API peuvent être administrées par le super-utilisateur avec le site d’administration de Django : &lt;<a class="reference external" href="https://heroku_app_name">https://heroku_app_name</a>-nombre_attribué_par_heroku.herokuapp.com/admin/&gt;`_
-Exemple : &lt;<a class="reference external" href="https://lettings-972532108750.herokuapp.com/admin/">https://lettings-972532108750.herokuapp.com/admin/</a>&gt;`_</p>
+Exemple : <a class="reference external" href="https://lettings-972532108750.herokuapp.com/admin/">https://lettings-972532108750.herokuapp.com/admin/</a></p>
 <p>2 - Entrer votre identifiant et votre mot de passe pour accéder au site d’administration de Django : ce site permet de gérer toutes les opérations [CRUD](&lt;<a class="reference external" href="https://openclassrooms.com/fr/courses/7172076-debutez-avec-le-framework-django/7516605-effectuez-des-operations-crud-dans-ladministration-de-django">https://openclassrooms.com/fr/courses/7172076-debutez-avec-le-framework-django/7516605-effectuez-des-operations-crud-dans-ladministration-de-django</a>&gt;`_) sur les ressources de l’API.</p>
 <p>::Rem:
 Voir également le chapitre <a class="reference internal" href="api.html"><span class="doc">Interface de programmation d’application</span></a></p>
@@ -92,66 +93,66 @@ Voir également le chapitre <a class="reference internal" href="api.html"><span 
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <div>
-    <h3><a href="index.html">Table des matières</a></h3>
-    <ul>
-<li><a class="reference internal" href="#">Procédures de déploiement et de gestion de l’application</a><ul>
-<li><a class="reference internal" href="#prerequis">Prérequis</a></li>
-<li><a class="reference internal" href="#deploiement-de-l-application-a-l-aide-de-la-pipeline-ci-cd-de-circleci">Déploiement de l’application à l’aide de la pipeline CI/CD de circleci</a><ul>
-<li><a class="reference internal" href="#name-value">Name                        Value</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#gestion-de-l-application">Gestion de l’application</a></li>
-<li><a class="reference internal" href="#gestion-de-la-base-de-donnees">Gestion de la base de données</a></li>
+        </div>
+        <div class="sidebar">
+          
+          <h3>Table des matières</h3>
+          <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="description_project.html">Description du projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation du projet</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">Guide de démarrage rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies.html">Technologies et les langages de programmation à utiliser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_structure.html">Description de la structure de la base de données et des modèles de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Description des interfaces de programmation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">Guide d’utilisation</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Procédures de déploiement et de gestion de l'application.</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequis">Prérequis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deploiement-de-l-application-a-l-aide-de-la-pipeline-ci-cd-de-circleci">Déploiement de l’application à l’aide de la pipeline CI/CD de circleci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gestion-de-l-application">Gestion de l’application</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#gestion-de-la-base-de-donnees">Gestion de la base de données</a></li>
 </ul>
 </li>
 </ul>
 
-  </div>
-  <div>
-    <h4>Sujet précédent</h4>
-    <p class="topless"><a href="user_guide.html"
-                          title="Chapitre précédent">Guide d’utilisation (avec des cas d’utilisation)</a></p>
-  </div>
-  <div role="note" aria-label="source link">
-    <h3>Cette page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/deployment_and_management.rst.txt"
-            rel="nofollow">Montrer le code source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Recherche rapide</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">Recherche</h3>
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="Go" />
+            </form>
+          </div>
+
         </div>
+        <div class="clearer"></div>
       </div>
-      <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="Index général"
-             >index</a></li>
-        <li class="right" >
-          <a href="user_guide.html" title="Guide d’utilisation (avec des cas d’utilisation)"
-             >précédent</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">Documentation Orange County Lettings </a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Procédures de déploiement et de gestion de l’application</a></li> 
-      </ul>
-    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <div role="navigation" aria-label="related navigaton">
+            <a href="user_guide.html" title="Guide d’utilisation (avec des cas d’utilisation)"
+              >précédent</a> |
+            <a href="genindex.html" title="Index général"
+              >index</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="_sources/deployment_and_management.rst.txt"
+                rel="nofollow">Montrer le code source</a>
+          </div>
+        </div>
+
+        <div class="right">
+          
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2023, Cazenave.
+    &#169; Copyright 2023, Mathieu Cazenave.
       Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
   </body>
 </html>

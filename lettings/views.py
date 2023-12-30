@@ -9,7 +9,14 @@ logger = logging.getLogger(__name__)
 # Aenean leo magna, vestibulum et tincidunt fermentum, consectetur quis velit. Sed non placerat massa. Integer est nunc, pulvinar a
 # tempor et, bibendum id arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Cras eget scelerisque
 def index(request):
-    """ Gère l'affichage d'une liste des locations sur la page lettings"""
+    """bisoussssssssssk.
+
+    :param inhabitant: The type of inhabitant, either shrimp of fish
+    :param quantity: The number of fish or shrimp to be added
+
+    :raises TankIsFullError: if the tank is already full
+    """
+    # Gère l'affichage d'une liste des locations sur la page lettings
     try:
         lettings_list = Letting.objects.all()
     except Letting.DoesNotExist:

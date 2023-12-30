@@ -17,6 +17,7 @@ django-heroku = "*"
 whitenoise = "*"
 python-dotenv = "*"
 sphinx = "*"
+sphinxcontrib-napoleon = "*"
 
 [dev-packages]
 

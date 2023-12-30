@@ -5,30 +5,37 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Installation du projet &#8212; Documentation Orange County Lettings </title>
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="_static/classic.css?v=514cf933" />
-    
+    <title>Installation du projet &#8212; Documentation Orange County Lettings - OC-Formation Python </title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="_static/agogo.css?v=47acb022" />
     <script src="_static/documentation_options.js?v=d1a510d7"></script>
     <script src="_static/doctools.js?v=888ff710"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/translations.js?v=d99ca74e"></script>
-    
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Recherche" href="search.html" /> 
+    <link rel="search" title="Recherche" href="search.html" />
+    <link rel="next" title="Démarrage rapide" href="quick_start.html" />
+    <link rel="prev" title="Description du projet" href="description_project.html" /> 
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
+    <div class="header-wrapper" role="banner">
+      <div class="header">
+        <div class="headertitle"><a
+          href="index.html">Documentation Orange County Lettings - OC-Formation Python </a></div>
+        <div class="rel" role="navigation" aria-label="related navigation">
+          <a href="description_project.html" title="Description du projet"
+             accesskey="P">précédent</a> |
+          <a href="quick_start.html" title="Démarrage rapide"
+             accesskey="N">suivant</a> |
           <a href="genindex.html" title="Index général"
-             accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Documentation Orange County Lettings </a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Installation du projet</a></li> 
-      </ul>
-    </div>  
+             accesskey="I">index</a>
+        </div>
+       </div>
+    </div>
 
-    <div class="document">
+    <div class="content-wrapper">
+      <div class="content">
+        <div class="document">
+            
       <div class="documentwrapper">
         <div class="bodywrapper">
           <div class="body" role="main">
@@ -37,51 +44,76 @@
 <h1>Installation du projet<a class="headerlink" href="#installation-du-projet" title="Link to this heading">¶</a></h1>
 <section id="prerequis">
 <h2>Prérequis<a class="headerlink" href="#prerequis" title="Link to this heading">¶</a></h2>
-<p>L’application aura besoin de <strong>Python</strong> (version 3.12), <strong>Git</strong> et <strong>Pipenv</strong> pour fonctionner. Si besoin, vous pouvez les installer en suivant les instructions sur [cette page](docs/installation_python-git-pipenv.md).
-Pour la surveillance des erreurs, vous aurez besoin de créer un compte sentry : <a class="reference external" href="https://sentry.io/signup/">https://sentry.io/signup/</a></p>
+<p>L’application aura besoin de <strong>Python</strong> (version 3.12), <strong>Git</strong> et <strong>Pipenv</strong> pour fonctionner. Si besoin, vous pouvez les installer en suivant les instructions sur <a class="reference external" href="https://github.com/Nunespace/Lettings/blob/main/doc/installation_python-git-pipenv.md">cette page</a>.</p>
+<p>Pour la surveillance des erreurs, vous aurez besoin de <a class="reference external" href="https://sentry.io/signup/">créer un compte Sentry</a>.</p>
+</section>
+<section id="installation-du-projet-sur-votre-machine-local">
+<h2>Installation du projet sur votre machine (local)<a class="headerlink" href="#installation-du-projet-sur-votre-machine-local" title="Link to this heading">¶</a></h2>
+<p>Si vous souhaitez utiliser <em>pip</em> à la place de <em>pipenv</em>, vous diposez du fichier <em>requirements.txt</em> pour installer toutes les dépendances du projet. Il vous faudra ensuite activer vous-même l’environnement virtuel (dans ce cas enlever « pipenv » ou « pipenv run » de toutes les commandes),
+et mettre <em>pip install</em> à la place de <em>pipenv install</em></p>
+<ol class="arabic">
+<li><p>Ouvrez le <strong>terminal</strong> et tapez</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Nunespace</span><span class="o">/</span><span class="n">Lettings</span><span class="o">.</span><span class="n">git</span>
+</pre></div>
+</div>
+</li>
+<li><p>Placez-vous dans le répertoire Lettings</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cd</span> <span class="n">Lettings</span>
+</pre></div>
+</div>
+</li>
+<li><p>Installez les dépendances du projet</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pipenv</span> <span class="n">install</span>
+</pre></div>
+</div>
+</li>
+<li><p>Créer un fichier .env à la racine du projet, y mettre les variables suivantes <a class="footnote-reference brackets" href="#f1" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SECRET_KEY</span><span class="o">=</span><span class="n">votre_cle_secrète_django</span>
+<span class="n">DSN</span><span class="o">=</span><span class="n">votre_cle_DSN_sentry</span>
+</pre></div>
+</div>
+</li>
+<li><p>Démarrer l’application avec</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pipenv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">runserver</span>
+</pre></div>
+</div>
+</li>
+<li><p>Ouvrez votre navigateur et entrez l’URL comme indiqué sur le terminal pour démarrer l’application:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="mf">127.0.0.1</span><span class="p">:</span><span class="mi">8000</span><span class="o">/</span>
+</pre></div>
+</div>
+</li>
+<li><p>Pour quitter le serveur, appuyez sur:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CTRL</span><span class="o">+</span><span class="n">C</span>
+</pre></div>
+</div>
+</li>
+</ol>
+<p>Pour les lancements ultérieurs du serveur, il suffit d’exécuter les étape 5 et 6 à partir du répertoire racine du projet.</p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f1" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
+</aside>
+</aside>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">Pour créer une clé secrète Django, taper les commandes suivantes</span><a class="headerlink" href="#id3" title="Link to this code">¶</a></div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">django.core.management.utils</span> <span class="kn">import</span> <span class="n">get_random_secret_key</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">get_random_secret_key</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="creation-du-projet-sur-sentry-io">
 <h2>Création du projet sur sentry.io<a class="headerlink" href="#creation-du-projet-sur-sentry-io" title="Link to this heading">¶</a></h2>
 <p>1 - Sur votre compte Sentry, créer un projet Django</p>
-<p>2 - Récupérer la clé client DSN de votre projet sentry (exemple de DSN :<a class="reference external" href="https://555555550faeed9ac552c37d085fec544&#64;o4506343489601536.ingest.sentry.io/99999999999">https://555555550faeed9ac552c37d085fec544&#64;o4506343489601536.ingest.sentry.io/99999999999</a>)</p>
-</section>
-<section id="installation-du-projet-sur-votre-machine-local">
-<h2>Installation du projet sur votre machine (local)<a class="headerlink" href="#installation-du-projet-sur-votre-machine-local" title="Link to this heading">¶</a></h2>
-<p>Si vous souhaitez utiliser pip à la place de pipenv, vous diposez du fichier <em>requirements.txt</em> pour installer toutes les dépendances du projet. Il vous faudra ensuite activer vous-même l’environnement virtuel (dans ce cas enlever « pipenv » ou « pipenv run » de toutes les commandes).</p>
-<ol class="arabic simple">
-<li><p>Ouvrez le terminal et tapez :</p></li>
-</ol>
-<p><code class="docutils literal notranslate"><span class="pre">`</span>
-<span class="pre">git</span> <span class="pre">clone</span> <span class="pre">https://github.com/Nunespace/Lettings.git</span>
-<span class="pre">`</span></code></p>
-<p>2. Placez-vous dans le répertoire Lettings :
-<code class="docutils literal notranslate"><span class="pre">`</span>
-<span class="pre">cd</span> <span class="pre">Lettings</span>
-<span class="pre">`</span></code></p>
-<p>3. Installez les dépendances du projet :
-<a href="#id1"><span class="problematic" id="id2">``</span></a>`
-pipenv install</p>
-<p>4. Créer un fichier .env à la racine du projet, y mettre les variables suivantes:
-``
-SECRET_KEY=votre_clé_secrète_django
-DSN=votre_clé_DSN_sentry
-``</p>
-<ol class="arabic simple" start="5">
-<li><p>Démarrer l’application avec :</p></li>
-</ol>
-<div class="highlight-console notranslate"><div class="highlight"><pre><span></span><span class="go">pipenv run python manage.py runserver</span>
-</pre></div>
-</div>
-<ol class="arabic simple" start="6">
-<li><p>Ouvrez votre navigateur et entrez l’URL suivante : [<a class="reference external" href="http://127.0.0.1:8000/](http://127.0.0.1:8000/">http://127.0.0.1:8000/](http://127.0.0.1:8000/</a>) comme indiqué sur le terminal pour démarrer l’application.</p></li>
-<li><p>Pour quitter le serveur, appuyez sur ` CTRL+C `</p></li>
-</ol>
-<p>Pour les lancements ultérieurs du serveur, il suffit d’exécuter les étape 5 et 6 à partir du répertoire racine du projet.</p>
-<p>Pour créer une clé secrète Django, taper les commandes suivantes :
-``
-from django.core.management.utils import get_random_secret_key
-print(get_random_secret_key())
-``</p>
+<p>2 - Récupérer la clé client DSN de votre projet sentry <a class="footnote-reference brackets" href="#f2" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="f2" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
+<p>Exemple de DSN :</p>
+<p><a class="reference external" href="https://555555550faeed9ac552c37d085fec544&#64;o4506343489601536.ingest.sentry.io/99999999999">https://555555550faeed9ac552c37d085fec544&#64;o4506343489601536.ingest.sentry.io/99999999999</a></p>
+</aside>
+</aside>
 </section>
 </section>
 
@@ -90,54 +122,67 @@ print(get_random_secret_key())
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
-        <div class="sphinxsidebarwrapper">
-  <div>
-    <h3><a href="index.html">Table des matières</a></h3>
-    <ul>
-<li><a class="reference internal" href="#">Installation du projet</a><ul>
-<li><a class="reference internal" href="#prerequis">Prérequis</a></li>
-<li><a class="reference internal" href="#creation-du-projet-sur-sentry-io">Création du projet sur sentry.io</a></li>
-<li><a class="reference internal" href="#installation-du-projet-sur-votre-machine-local">Installation du projet sur votre machine (local)</a></li>
+        </div>
+        <div class="sidebar">
+          
+          <h3>Table des matières</h3>
+          <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="description_project.html">Description du projet</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Installation du projet</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#prerequis">Prérequis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-du-projet-sur-votre-machine-local">Installation du projet sur votre machine (local)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creation-du-projet-sur-sentry-io">Création du projet sur sentry.io</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="quick_start.html">Guide de démarrage rapide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="technologies.html">Technologies et les langages de programmation à utiliser</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_structure.html">Description de la structure de la base de données et des modèles de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">Description des interfaces de programmation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide.html">Guide d’utilisation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="deployment_and_management.html">Procédures de déploiement et de gestion de l'application.</a></li>
 </ul>
 
-  </div>
-  <div role="note" aria-label="source link">
-    <h3>Cette page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/installation.rst.txt"
-            rel="nofollow">Montrer le code source</a></li>
-    </ul>
-   </div>
-<div id="searchbox" style="display: none" role="search">
-  <h3 id="searchlabel">Recherche rapide</h3>
-    <div class="searchformwrapper">
-    <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
-      <input type="submit" value="Go" />
-    </form>
-    </div>
-</div>
-<script>document.getElementById('searchbox').style.display = "block"</script>
+          <div role="search">
+            <h3 style="margin-top: 1.5em;">Recherche</h3>
+            <form class="search" action="search.html" method="get">
+                <input type="text" name="q" />
+                <input type="submit" value="Go" />
+            </form>
+          </div>
+
         </div>
+        <div class="clearer"></div>
       </div>
-      <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="Index général"
-             >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">Documentation Orange County Lettings </a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Installation du projet</a></li> 
-      </ul>
-    </div>
+
+    <div class="footer-wrapper">
+      <div class="footer">
+        <div class="left">
+          <div role="navigation" aria-label="related navigaton">
+            <a href="description_project.html" title="Description du projet"
+              >précédent</a> |
+            <a href="quick_start.html" title="Démarrage rapide"
+              >suivant</a> |
+            <a href="genindex.html" title="Index général"
+              >index</a>
+          </div>
+          <div role="note" aria-label="source link">
+              <br/>
+              <a href="_sources/installation.rst.txt"
+                rel="nofollow">Montrer le code source</a>
+          </div>
+        </div>
+
+        <div class="right">
+          
     <div class="footer" role="contentinfo">
-    &#169; Copyright 2023, Cazenave.
+    &#169; Copyright 2023, Mathieu Cazenave.
       Créé en utilisant <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
     </div>
+        </div>
+        <div class="clearer"></div>
+      </div>
+    </div>
+
   </body>
 </html>

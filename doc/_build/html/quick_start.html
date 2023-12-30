@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Description de la structure de la base de données et des modèles de données &#8212; Documentation Orange County Lettings - OC-Formation Python </title>
+    <title>Démarrage rapide &#8212; Documentation Orange County Lettings - OC-Formation Python </title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="_static/agogo.css?v=47acb022" />
     <script src="_static/documentation_options.js?v=d1a510d7"></script>
@@ -14,17 +14,17 @@
     <script src="_static/translations.js?v=d99ca74e"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Recherche" href="search.html" />
-    <link rel="next" title="Interface de programmation d’application (API)" href="api.html" />
-    <link rel="prev" title="Technologies et les langages de programmation à utiliser" href="technologies.html" /> 
+    <link rel="next" title="Technologies et les langages de programmation à utiliser" href="technologies.html" />
+    <link rel="prev" title="Installation du projet" href="installation.html" /> 
   </head><body>
     <div class="header-wrapper" role="banner">
       <div class="header">
         <div class="headertitle"><a
           href="index.html">Documentation Orange County Lettings - OC-Formation Python </a></div>
         <div class="rel" role="navigation" aria-label="related navigation">
-          <a href="technologies.html" title="Technologies et les langages de programmation à utiliser"
+          <a href="installation.html" title="Installation du projet"
              accesskey="P">précédent</a> |
-          <a href="api.html" title="Interface de programmation d’application (API)"
+          <a href="technologies.html" title="Technologies et les langages de programmation à utiliser"
              accesskey="N">suivant</a> |
           <a href="genindex.html" title="Index général"
              accesskey="I">index</a>
@@ -40,10 +40,34 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="description-de-la-structure-de-la-base-de-donnees-et-des-modeles-de-donnees">
-<h1>Description de la structure de la base de données et des modèles de données<a class="headerlink" href="#description-de-la-structure-de-la-base-de-donnees-et-des-modeles-de-donnees" title="Link to this heading">¶</a></h1>
-<p>Les modèles principaux de l’application sont <em>lettings</em> lié à <em>lettings_adresses</em> et <em>profiles</em> lié à <em>user</em> :</p>
-<img alt="_images/DBSQLiteLettings.png" src="_images/DBSQLiteLettings.png" />
+  <section id="demarrage-rapide">
+<h1>Démarrage rapide<a class="headerlink" href="#demarrage-rapide" title="Link to this heading">¶</a></h1>
+<section id="avec-le-terminal-et-python">
+<h2>Avec le terminal et Python<a class="headerlink" href="#avec-le-terminal-et-python" title="Link to this heading">¶</a></h2>
+<p>Une fois le projet installé en local (voir <a class="reference internal" href="installation.html"><span class="doc">Installation</span></a>)</p>
+<ol class="arabic simple">
+<li><p>Démarrer l’application avec :</p></li>
+</ol>
+<p><code class="docutils literal notranslate"><span class="pre">pipenv</span> <span class="pre">run</span> <span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">runserver</span></code></p>
+<ol class="arabic simple" start="2">
+<li><p>Pour démarrer l’application web, ouvrez votre navigateur et entrez l’URL suivante : <a class="reference external" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> (comme indiqué sur le terminal) ou taper : <a class="reference external" href="http://localhost:8000/">http://localhost:8000/</a></p></li>
+<li><p>Pour quitter le serveur, appuyez sur <em>CTRL+C</em></p></li>
+</ol>
+</section>
+<section id="avec-docker">
+<h2>Avec Docker<a class="headerlink" href="#avec-docker" title="Link to this heading">¶</a></h2>
+<ol class="arabic simple">
+<li><p>Aller sur l’url de recherche de <a class="reference external" href="https://hub.docker.com/search/?type=image&amp;image_filter=official">Docker Hub</a></p></li>
+</ol>
+<ol class="arabic simple" start="2">
+<li><p>Dans la zone de recherche, taper <em>nunespace/lettings</em></p></li>
+<li><p>Cliquer sur l’image puis sur l’onglet <em>Tags</em></p></li>
+<li><p>Copier/coller la commande « Docker Pull Command » dans votre terminal</p></li>
+<li><p>Dans votre Docker Desktop, l’image se trouve alors dans <em>Images/local</em></p></li>
+<li><p>Cliquer sur <em>Run</em>, donner un nom à votre conteneur et taper 8000 dans <em>host port</em></p></li>
+<li><p>Cliquer sur <em>Run</em> puis sur 8000:8000⁠ ou ouvrez votre navigateur et entrez l’URL suivante: <a class="reference external" href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a> ou <a class="reference external" href="http://localhost:8000/">http://localhost:8000/</a></p></li>
+</ol>
+</section>
 </section>
 
 
@@ -58,9 +82,13 @@
           <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="description_project.html">Description du projet</a></li>
 <li class="toctree-l1"><a class="reference internal" href="installation.html">Installation du projet</a></li>
-<li class="toctree-l1"><a class="reference internal" href="quick_start.html">Guide de démarrage rapide</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Guide de démarrage rapide</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#avec-le-terminal-et-python">Avec le terminal et Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#avec-docker">Avec Docker</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="technologies.html">Technologies et les langages de programmation à utiliser</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Description de la structure de la base de données et des modèles de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="database_structure.html">Description de la structure de la base de données et des modèles de données</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api.html">Description des interfaces de programmation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="user_guide.html">Guide d’utilisation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="deployment_and_management.html">Procédures de déploiement et de gestion de l'application.</a></li>
@@ -83,16 +111,16 @@
       <div class="footer">
         <div class="left">
           <div role="navigation" aria-label="related navigaton">
-            <a href="technologies.html" title="Technologies et les langages de programmation à utiliser"
+            <a href="installation.html" title="Installation du projet"
               >précédent</a> |
-            <a href="api.html" title="Interface de programmation d’application (API)"
+            <a href="technologies.html" title="Technologies et les langages de programmation à utiliser"
               >suivant</a> |
             <a href="genindex.html" title="Index général"
               >index</a>
           </div>
           <div role="note" aria-label="source link">
               <br/>
-              <a href="_sources/database_structure.rst.txt"
+              <a href="_sources/quick_start.rst.txt"
                 rel="nofollow">Montrer le code source</a>
           </div>
         </div>
