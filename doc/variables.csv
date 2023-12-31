@@ -1,0 +1,8 @@
+Name,Value
+DOCKER_PASSWORD,votre_mot_de_pass_dockerhub
+DOCKER_USERNAME,votre identifiant_dockerhub
+DSN,votre_cké_sentry-DSN
+HEROKU_APP_NAME,nom_de_application_heroku
+HEROKU_TOKEN,votre identifiant_dockerhub
+IMAGE_NAME,nom_de_l_image
+SECRET_KEY,Cle_secrete_django

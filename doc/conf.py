@@ -16,8 +16,8 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "Orange County Lettings - OC-Formation Python"
-copyright = "2023, Mathieu Cazenave"
+project = "Orange County Lettings"
+copyright = "2023, Mathieu Cazenave - OC-Formation Python- Projet 13"
 author = "Mathieu Cazenave"
 
 # -- General configuration ---------------------------------------------------
@@ -37,7 +37,7 @@ language = "fr"
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = "agogo"
+html_theme = 'sphinx_rtd_theme'
 
 html_theme_options = {}
 

@@ -19,6 +19,7 @@ python-dotenv = "*"
 sphinx = "*"
 sphinxcontrib-napoleon = "*"
 sphinxcontrib-video = "*"
+sphinx-rtd-theme = "*"
 
 [dev-packages]
 
