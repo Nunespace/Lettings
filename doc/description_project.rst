@@ -19,6 +19,6 @@ L'entreprise a souhaité améliorer son `site web`_ tant sur le code que sur le 
 
     4 - Surveillance de l’application et suivi des erreurs via Sentry ; 
 
-    5 - Création de la documentation technique de l’application avec Read The Docs et Sphinx.
+    5 - Création de la documentation technique de l application avec Read The Docs et Sphinx.
 
 .. _site web:  https://lettings-972532108750.herokuapp.com/
