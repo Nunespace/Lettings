@@ -2,7 +2,7 @@
 Installation du projet
 ======================
 
-Prérequisssssssssssssssss
+Prérequis
 ------------
 L'application aura besoin de **Python** (version 3.12), **Git** et **Pipenv** pour fonctionner. Si besoin, vous pouvez les installer en suivant les instructions sur `cette page`_.
 
