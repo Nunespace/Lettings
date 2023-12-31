@@ -43,23 +43,32 @@
   <section id="interface-de-programmation-dapplication-api">
 <h1>Interface de programmation d’application (API)<a class="headerlink" href="#interface-de-programmation-dapplication-api" title="Link to this heading">¶</a></h1>
 <p>Le code est construit avec le framework web Django.
-Il est composé de trois applications :
-- oc-lettings-site où se trouve le fichier settings.py du projet Django et qui comporte un fichier views gérant les errurs 404 et 500
-- lettings qui gèrent les modèles <em>Letting</em> et <em>Adress</em>
-- profiles qui gère le modèle <em>Profiles</em></p>
-<p>Pour utiliser l’interface de programmation (API)¶que Django met à disposition, il existe deux possiblités.</p>
+Il est composé de trois applications :</p>
+<ul class="simple">
+<li><p>oc-lettings-site où se trouve le fichier settings.py du projet Django et qui comporte un fichier views gérant les errurs 404 et 500</p></li>
+<li><p>lettings qui gèrent les modèles <em>Letting</em> et <em>Adress</em></p></li>
+<li><p>profiles qui gère le modèle <em>Profiles</em></p></li>
+</ul>
+<p>Pour utiliser l’interface de programmation (API) que Django met à disposition il existe deux possiblités. L”</p>
 <section id="avec-le-shell-interactif-python">
 <h2>Avec le shell interactif Python<a class="headerlink" href="#avec-le-shell-interactif-python" title="Link to this heading">¶</a></h2>
 <p>Pour lancer un shell Python, utilisez cette commande à la racine du projet :</p>
 <p><code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">manage.py</span> <span class="pre">shell</span></code></p>
-<p>Une fois dans le shell, explorez l’API de base de données: <a class="reference external" href="https://docs.djangoproject.com/fr/5.0/intro/tutorial02/#playing-with-the-api">https://docs.djangoproject.com/fr/5.0/intro/tutorial02/#playing-with-the-api</a>
-Django automatise entièrement la création des interfaces d’administration pour les modèles.</p>
+<p>Une fois dans le shell, explorez l’API de base de données:</p>
+<blockquote>
+<div><p><a class="reference external" href="https://docs.djangoproject.com/fr/5.0/intro/tutorial02/#playing-with-the-api">https://docs.djangoproject.com/fr/5.0/intro/tutorial02/#playing-with-the-api</a></p>
+</div></blockquote>
+<p>Django automatise entièrement la création des interfaces d’administration pour les modèles.</p>
 </section>
 <section id="avec-le-site-dadministration-de-django">
 <h2>Avec le site d’administration de Django<a class="headerlink" href="#avec-le-site-dadministration-de-django" title="Link to this heading">¶</a></h2>
-<p>Les données de l’API peuvent être administrées par le super-utilisateur avec le site d’administration de Django.</p>
-<p>Pour créer un super-utilisateur et explorer les fonctionnalités de l’interface d’administration, visiter le site Django à cette adresse : <a class="reference external" href="https://docs.djangoproject.com/fr/5.0/intro/tutorial02/#introducing-the-django-admin">https://docs.djangoproject.com/fr/5.0/intro/tutorial02/#introducing-the-django-admin</a></p>
-<p><em>rem : Dans le cadre de la formation Python, un superutilisateur est déjà créé dans la base de données Sqlite3 du projet.</em></p>
+<p>Les données de l’API peuvent être administrées par le super-utilisateur avec le site d’administration de Django.
+Ce site permet d’effectuer toutes les opérations CRUD (Create, Read, Update, Delete) sur les données de l’application.</p>
+<dl class="simple">
+<dt>Pour créer un super-utilisateur et explorer les fonctionnalités de l’interface d’administration, visiter le site Django à cette adresse :</dt><dd><p><a class="reference external" href="https://docs.djangoproject.com/fr/5.0/intro/tutorial02/#introducing-the-django-admin">https://docs.djangoproject.com/fr/5.0/intro/tutorial02/#introducing-the-django-admin</a></p>
+</dd>
+</dl>
+<p><em>rem : Dans le cadre de la formation Python, un superutilisateur est déjà créé et enregistré dans la base de données Sqlite3 du projet.</em></p>
 </section>
 </section>
 

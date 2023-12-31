@@ -9,7 +9,7 @@ Scénario
 --------
 
 Orange County Lettings est une start-up dans le secteur de la location de biens immobiliers. La start-up est en pleine phase d’expansion aux États-Unis. 
-L'entreprise a souhaité améliorer son site web tant sur le code que sur le déploiement, notamment:
+L'entreprise a souhaité améliorer son `site web`_ tant sur le code que sur le déploiement, notamment:
 
     1 - Refonte de l'architecture modulaire dans le repository GitHub ;
 
@@ -20,3 +20,5 @@ L'entreprise a souhaité améliorer son site web tant sur le code que sur le dé
     4 - Surveillance de l’application et suivi des erreurs via Sentry ; 
 
     5 - Création de la documentation technique de l’application avec Read The Docs et Sphinx.
+
+.. _site web:  https://lettings-972532108750.herokuapp.com/

@@ -1,13 +1,17 @@
 Guide d’utilisation (avec des cas d’utilisation)
 ================================================
 
-Aller sur la page d'accueil,
-Consulter les profils : cliquer sur Profiles
-puis sur un profil pour accéder à son détail (Nom, ville favorite, etc)
+* Aller sur la page d'accueil :
+    https://lettings-972532108750.herokuapp.com/
 
-Consulter les locations : cliquer sur Lettings
-puis sur une location pour accéder à son adresse
+* Consulter les profils : cliquer sur *Profiles*
 
-Chaque page dispose d'un accueil(Home) et/ou retour (back)
+* Consulter le détail d'un profil : cliquer sur un profil pour accéder à son détail (Nom, ville favorite, etc)
 
-.. image:: demo.mp4
+* Consulter les locations : cliquer sur *Lettings*
+
+* Consulter une location : cliquer sur une location pour accéder à son adresse
+
+Chaque page dispose d'un bouton accueil(Home) et/ou retour (back)
+
+.. image:: _static/home.png

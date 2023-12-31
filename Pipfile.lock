@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "2a3d84716728e3c65ab2701a2ed7d67a32718aadbfafeb0239ba02fcc8c1b109"
+            "sha256": "dbe2f752c21e9d66f17b6f76b6158494df57b64fdba09f1921e273b74a710c34"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -585,6 +585,15 @@
             ],
             "markers": "python_version >= '3.9'",
             "version": "==1.1.9"
+        },
+        "sphinxcontrib-video": {
+            "hashes": [
+                "sha256:8973278316c02547efd0910bfd69205385462c423885cf03edc28b1c66f3b23c",
+                "sha256:c98afef50a5452d5a6960fd57c6b57b71da9b825cadaa56c1b6c77338bfd0284"
+            ],
+            "index": "pypi",
+            "markers": "python_full_version >= '3.6.9'",
+            "version": "==0.2.0"
         },
         "sqlparse": {
             "hashes": [

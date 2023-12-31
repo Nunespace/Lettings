@@ -41,27 +41,46 @@
 <h1>Procédures de déploiement et de gestion de l’application<a class="headerlink" href="#procedures-de-deploiement-et-de-gestion-de-l-application" title="Link to this heading">¶</a></h1>
 <section id="prerequis">
 <h2>Prérequis<a class="headerlink" href="#prerequis" title="Link to this heading">¶</a></h2>
-<p>Disposer d’un compte sur :
-- circleci : &lt;circleci.com/&gt;`_
-- docker hub : &lt;hub.docker.com&gt;`_
-- Heroku : &lt;www.heroku.com&gt;`_</p>
-<p>Voir aussi le chapitre <em>Technologies</em></p>
+<p>Disposer d’un compte sur :</p>
+<ul class="simple">
+<li><p>circleci : <a class="reference external" href="https://circleci.com/">https://circleci.com/</a></p></li>
+<li><p>docker hub : <a class="reference external" href="https://hub.docker.com">https://hub.docker.com</a></p></li>
+<li><p>Heroku : <a class="reference external" href="https://www.heroku.com">https://www.heroku.com</a></p></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Voir aussi <a class="reference internal" href="technologies.html"><span class="doc">Technologies</span></a></p>
+</div>
 </section>
 <section id="deploiement-de-l-application-a-l-aide-de-la-pipeline-ci-cd-de-circleci">
 <h2>Déploiement de l’application à l’aide de la pipeline CI/CD de circleci<a class="headerlink" href="#deploiement-de-l-application-a-l-aide-de-la-pipeline-ci-cd-de-circleci" title="Link to this heading">¶</a></h2>
-<p>1 - Installer Heroku CLI : &lt;<a class="reference external" href="https://devcenter.heroku.com/articles/heroku-cli">https://devcenter.heroku.com/articles/heroku-cli</a>&gt;`_</p>
+<p>1 - Installer Heroku CLI : <a class="reference external" href="https://devcenter.heroku.com/articles/heroku-cli">https://devcenter.heroku.com/articles/heroku-cli</a></p>
 <p>2 - Créer un projet sur circleci avec une dépot github</p>
 <p>3 - Enregistrer les variables d’environnements du projet sur circleci :</p>
-<section id="name-value">
-<h3>Name                        Value<a class="headerlink" href="#name-value" title="Link to this heading">¶</a></h3>
-<p>DOCKER_PASSWORD votre_mot_de_pass_dockerhub
-DOCKER_USERNAME votre identifiant_dockerhub
-DSN                 votre_cké_sentry-DSN
-HEROKU_APP_NAME nom_de_votre_application_heroku
-HEROKU_TOKEN    voir_ci_dessous_pour_l_obtenir
-IMAGE_NAME          ex:_lettings_image
-SECRET_KEY          votre_clé_secrète_django
-===============================================</p>
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Title</span><a class="headerlink" href="#id1" title="Link to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25.0%" />
+<col style="width: 25.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Heading row 1, column 1</p></th>
+<th class="head"><p>Heading row 1, column 2</p></th>
+<th class="head"><p>Heading row 1, column 3</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Row 1, column 1</p></td>
+<td></td>
+<td><p>Row 1, column 3</p></td>
+</tr>
+<tr class="row-odd"><td><p>Row 2, column 1</p></td>
+<td><p>Row 2, column 2</p></td>
+<td><p>Row 2, column 3</p></td>
+</tr>
+</tbody>
+</table>
 <p>HEROKU_APP_NAME : Exemple : lettings</p>
 <p><em>pour obtenir HEROKU_TOKEN, taper dans votre terminal</em> :
 <code class="docutils literal notranslate"><span class="pre">heroku</span> <span class="pre">authorizations:create</span></code>
@@ -70,12 +89,11 @@ SECRET_KEY          votre_clé_secrète_django
 <p>Le site web est alors en ligne à cette url : <a class="reference external" href="https://nom_de_votre_application">https://nom_de_votre_application</a>-nombre_attribué_par_heroku.herokuapp.com/
 Exemple : <a class="reference external" href="https://lettings-972532108750.herokuapp.com/">https://lettings-972532108750.herokuapp.com/</a></p>
 </section>
-</section>
 <section id="gestion-de-l-application">
 <h2>Gestion de l’application<a class="headerlink" href="#gestion-de-l-application" title="Link to this heading">¶</a></h2>
 <p>Surveillance des erreurs
 Sentry est utilisé comme outil de surveillance des erreurs.
-Chaque erreur est répertoriée dans le dossier <em>Issues</em> du projet sur votre compte <a class="reference external" href="https://sentry.io">**Sentry** :</a></p>
+Chaque erreur est répertoriée dans le dossier <em>Issues</em> du projet sur votre compte Sentry : <a class="reference external" href="https://sentry.io">https://sentry.io</a></p>
 </section>
 <section id="gestion-de-la-base-de-donnees">
 <h2>Gestion de la base de données<a class="headerlink" href="#gestion-de-la-base-de-donnees" title="Link to this heading">¶</a></h2>
@@ -83,7 +101,7 @@ Chaque erreur est répertoriée dans le dossier <em>Issues</em> du projet sur vo
 Exemple : <a class="reference external" href="https://lettings-972532108750.herokuapp.com/admin/">https://lettings-972532108750.herokuapp.com/admin/</a></p>
 <p>2 - Entrer votre identifiant et votre mot de passe pour accéder au site d’administration de Django : ce site permet de gérer toutes les opérations [CRUD](&lt;<a class="reference external" href="https://openclassrooms.com/fr/courses/7172076-debutez-avec-le-framework-django/7516605-effectuez-des-operations-crud-dans-ladministration-de-django">https://openclassrooms.com/fr/courses/7172076-debutez-avec-le-framework-django/7516605-effectuez-des-operations-crud-dans-ladministration-de-django</a>&gt;`_) sur les ressources de l’API.</p>
 <p>::Rem:
-Voir également le chapitre <a class="reference internal" href="api.html"><span class="doc">Interface de programmation d’application</span></a></p>
+Voir également <a class="reference internal" href="api.html"><span class="doc">Interface de programmation d’application</span></a></p>
 <p>-Dans le cadre de la formation Python, un superutilisateur est déjà créé dans la base de données Sqlite3 du projet.*</p>
 </section>
 </section>

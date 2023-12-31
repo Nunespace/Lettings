@@ -39,8 +39,6 @@ language = "fr"
 
 html_theme = "agogo"
 
-html_theme_options = {
-    
-}
+html_theme_options = {}
 
 html_static_path = ["_static"]
