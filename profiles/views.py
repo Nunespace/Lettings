@@ -1,5 +1,10 @@
+import logging
+import sentry_sdk
+from django.http import Http404
 from django.shortcuts import render
 from .models import Profile
+
+logger = logging.getLogger(__name__)
 
 
 def index(request):
@@ -11,6 +16,11 @@ def index(request):
 
 def profile(request, username):
     """Renvoie vers la page détaillant un profil"""
-    profile = Profile.objects.get(user__username=username)
+    try:
+        profile = Profile.objects.get(user__username=username)
+    except Profile.DoesNotExist:
+        sentry_sdk.capture_message("Cette page n'existe pas", level="error")
+        logger.error("Cette page n'existe pas")
+        raise Http404("This profile does not exist")
     context = {"profile": profile}
     return render(request, "profiles/profile.html", context)
