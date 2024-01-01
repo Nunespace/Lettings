@@ -3,7 +3,7 @@ from .models import Profile
 
 
 def index(request):
-    """Renvoie vers la page affichant la liste des profils des clients/utilisateurs"""
+    """Renvoie vers la page affichant la liste des profils des clients"""
     profiles_list = Profile.objects.all()
     context = {"profiles_list": profiles_list}
     return render(request, "profiles/index.html", context)
