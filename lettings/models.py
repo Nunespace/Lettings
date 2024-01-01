@@ -3,6 +3,11 @@ from django.core.validators import MaxValueValidator, MinLengthValidator
 
 
 class Address(models.Model):
+    """
+    Le modèle Adress est lié au modèle de Letting (location).
+    La class Meta est utilisée pour régulariser l'orthographe de Adress au
+    pluriel dans le site d'administration de Django
+    """
     class Meta:
         verbose_name = "Adress"
         verbose_name_plural = "Adresses"

@@ -67,7 +67,9 @@ INSTALLED_APPS = [
     "lettings",
     "profiles",
 ]
-
+# WhiteNoise permet à une application web de servir ses propres
+# fichiers statiques, ce qui en fait une unité autonome
+# qui peut être déployée n'importe où
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
