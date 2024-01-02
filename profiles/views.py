@@ -15,7 +15,10 @@ def index(request):
 
 
 def profile(request, username):
-    """Renvoie vers la page détaillant un profil"""
+    """
+    Renvoie vers la page détaillant un profil ou vers une page
+    personnalisée 404 en cas de nom de profil inexistant
+    """
     try:
         profile = Profile.objects.get(user__username=username)
     except Profile.DoesNotExist:
