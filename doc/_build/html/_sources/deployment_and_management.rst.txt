@@ -29,16 +29,13 @@ Déploiement de l'application à l'aide de la pipeline CI/CD de circleci
    "DOCKER_USERNAME",	"identifiant_dockerhub"
    "DSN",	"cle_sentry-DSN"
    "HEROKU_APP_NAME",	"lettings"
-   "HEROKU_TOKEN",	"heroku_token*"
+   "HEROKU_TOKEN",	"api_key_heroku*"
    "IMAGE_NAME",	"lettings_image"
-   "SECRET_KEY",	"cle_secrete_django"
+   "SECRET_KEY",	"secret_key_django"
 
 
-(*)HEROKU_TOKEN est obtenu en tapant dans le terminal :
+(*)L'API key est indiquée dans le `compte Heroku <https://dashboard.heroku.com/account>`_ dans *Account Settings*.
 
-``heroku authorizations:create``
-
-Cela va récupérer un jeton, que vous devez utiliser comme variable HEROKU-TOKEN.
 
 4 - **Le pipeline se lance dès sa création puis à chaque commit sur Git hub.**
 

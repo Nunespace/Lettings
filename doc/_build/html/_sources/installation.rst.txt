@@ -8,8 +8,6 @@ L'application aura besoin de **Python** (version 3.12), **Git** et **Pipenv** po
 
 .. _cette page: https://github.com/Nunespace/Lettings/blob/main/doc/installation_python-git-pipenv.md
 
-Pour la surveillance des erreurs, vous aurez besoin de `créer un compte Sentry <https://sentry.io/signup/>`_. 
-
 
 
 Installation du projet sur votre machine (local)

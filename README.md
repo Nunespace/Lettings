@@ -13,10 +13,6 @@ Elle souhaite améliorer son site tant sur le code que sur le déploiement.
 - Surveillance de l’application et suivi des erreurs via Sentry ; 
 - Création de la documentation technique de l'application avec Read The Docs et Sphinx.
 
- 
-## Configuration actuelle
-
-L’application nécessite un fichier *.env*, qui contient la clé secrète Django et la clé DSN de Sentry, non présent dans ce dépôt github.
 
 ## Prérequis
 
@@ -105,7 +101,7 @@ Exécutez, à partir de la  racine du projet, la commande suivante[^2] :
 pipenv run flake8
 ```
 
-[^1]: Les clés secrètes Django et DSN de Sentry sont communiquées en dehors du dépôt Git hub
+[^1]: L’application nécessite un fichier *.env*, qui contient la clé secrète Django et la clé DSN de Sentry, non présent dans ce dépôt github.
 [^2]: Si vous utilisez *pip*, activer votre environnement virtuel et enlever *pipenv run* : 
 
 

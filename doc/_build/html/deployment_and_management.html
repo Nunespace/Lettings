@@ -131,19 +131,17 @@
 <td><p>lettings</p></td>
 </tr>
 <tr class="row-even"><td><p>HEROKU_TOKEN</p></td>
-<td><p>heroku_token*</p></td>
+<td><p>api_key_heroku*</p></td>
 </tr>
 <tr class="row-odd"><td><p>IMAGE_NAME</p></td>
 <td><p>lettings_image</p></td>
 </tr>
 <tr class="row-even"><td><p>SECRET_KEY</p></td>
-<td><p>cle_secrete_django</p></td>
+<td><p>secret_key_django</p></td>
 </tr>
 </tbody>
 </table>
-<p>(*)HEROKU_TOKEN est obtenu en tapant dans le terminal :</p>
-<p><code class="docutils literal notranslate"><span class="pre">heroku</span> <span class="pre">authorizations:create</span></code></p>
-<p>Cela va récupérer un jeton, que vous devez utiliser comme variable HEROKU-TOKEN.</p>
+<p>(*)L’API key est indiquée dans le <a class="reference external" href="https://dashboard.heroku.com/account">compte Heroku</a> dans <em>Account Settings</em>.</p>
 <p>4 - <strong>Le pipeline se lance dès sa création puis à chaque commit sur Git hub.</strong></p>
 <p>Le site web est alors en ligne à cette url :</p>
 <p><a class="reference external" href="https://nom_de_votre_application">https://nom_de_votre_application</a>-nombre_attribué_par_heroku.herokuapp.com</p>
