@@ -25,7 +25,10 @@ L'application aura besoin de **Python** (version 3.12), **Git** et **Pipenv** po
 
 ## Installation
 
-Cette application exécutable localement peut être installée à l'aide de pipenv en suivant les étapes décrites ci-dessous[^1].
+Cette application exécutable localement peut être installée à l'aide de pipenv en suivant les étapes décrites ci-dessous.
+> [!NOTE]  
+> Si vous souhaitez utiliser *pip* à la place de *pipenv*, vous diposez du fichier *requirements.txt* pour installer toutes les dépendances du projet. Il vous faudra ensuite activer vous-même l'environnement virtuel (dans ce cas enlever "pipenv" ou "pipenv run" de toutes les commandes),
+et mettre *pip install* à la place de *pipenv install*
 
 
 1. Ouvrez le **terminal** et tapez ::
@@ -75,7 +78,7 @@ Le chapitre [*"Procédures de déploiement et de gestion de l’application" de 
 ### Lancement des tests
 Les tests de ce projet ont été écrits avec le framework pytest.
 
-Ils sont executables avec la commande : 
+Ils sont executables avec la commande [^1]: 
 ```
 pipenv run pytest
 ```
@@ -97,22 +100,13 @@ Un nouveau dossier *htmlcov* est ainsi créé à l'endroit où vous avez lancé 
 
 Le linting sur l'ensemble du code peut être exécuté avec Flake8.
 
-Exécutez, à partir de la  racine du projet, la commande suivante : 
+Exécutez, à partir de la  racine du projet, la commande suivante[^1] : 
 ```
 pipenv run flake8
 ```
 
-Si vous utilisez *pip*, activer votre environnement virtuel, puis tapez simplement : 
-```
-flake8
-```
 
-[^1]:
-[!NOTE]  
-> Si vous souhaitez utiliser *pip* à la place de *pipenv*, vous diposez du fichier *requirements.txt* pour installer toutes les dépendances du projet. Il vous faudra ensuite activer vous-même l'environnement virtuel (dans ce cas enlever "pipenv" ou "pipenv run" de toutes les commandes),
-et mettre *pip install* à la place de *pipenv install*
-
-
+[^1]: Si vous utilisez *pip*, activer votre environnement virtuel et enlever *pipenv run* : 
 
 
 
