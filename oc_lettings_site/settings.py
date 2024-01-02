@@ -164,7 +164,7 @@ if IS_HEROKU:
     #SECURE_HSTS_SECONDS = 3600
     #SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
     #  SecurityMiddleware redirige toutes les requêtes non HTTPS vers HTTPS:
-    #SECURE_SSL_REDIRECT = True
+    SECURE_SSL_REDIRECT = True
     # voir https://docs.djangoproject.com/fr/5.0/howto/deployment/checklist/
     # pour éviter de transmettre le cookie CSRF accidentellement par HTTP:
     CSRF_COOKIE_SECURE = True
