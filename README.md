@@ -75,12 +75,13 @@ Le chapitre [*"Procédures de déploiement et de gestion de l’application" de 
 ● la configuration requise ;
 ● les étapes nécessaires pour effectuer le déploiement.
 
-## Tests
+## Tests et linting
 
-Les tests de ce projet ont été écrits avec le framework pytest.
 
 ### Lancement des tests
-Les tests sont executables avec la commande : 
+Les tests de ce projet ont été écrits avec le framework pytest.
+
+Ils sont executables avec la commande : 
 ```
 pipenv run pytest
 ```
@@ -97,6 +98,14 @@ pipenv run pytest --cov=. --cov-report html
 ```
 Nn nouveau dossier *htmlcov* est ainsi créé à l'endroit où vous avez lancé la commande. Avec votre navigateur, ouvrez le fichier *index.html*  qui contient un résumé du rapport de couverture. À partir de cette page, vous pourrez naviguer à travers les différents fichiers afin d’avoir le détail sur la couverture.
 
+
+### Linting
+Le linting peut être exécuté avec Flake8.
+Exécuter, à partir de la  racine du projet, la commande suivante : 
+```pipenv run flake8```
+
+Si vous utilisez pip, activer votre environnement virtuel, puis taper simplement : 
+```flake8```
 
 
 

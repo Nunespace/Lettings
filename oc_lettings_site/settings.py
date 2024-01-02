@@ -162,7 +162,7 @@ if IS_HEROKU:
     # voir https://docs.djangoproject.com/fr/5.0/ref/middleware/#http-strict-transport-security)
     #SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     #SECURE_HSTS_SECONDS = 3600
-    #SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
     #  SecurityMiddleware redirige toutes les requêtes non HTTPS vers HTTPS:
     SECURE_SSL_REDIRECT = True
     # voir https://docs.djangoproject.com/fr/5.0/howto/deployment/checklist/
