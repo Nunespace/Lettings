@@ -92,7 +92,7 @@
 <h1>Procédures de déploiement et de gestion de l’application<a class="headerlink" href="#procedures-de-deploiement-et-de-gestion-de-l-application" title="Link to this heading"></a></h1>
 <section id="prerequis">
 <h2>Prérequis<a class="headerlink" href="#prerequis" title="Link to this heading"></a></h2>
-<p>Disposer d’un compte sur :
+<p>Disposer des identifiants et mots de passe pour :
 * circleci : <a class="reference external" href="https://circleci.com/">https://circleci.com/</a>
 * docker hub : <a class="reference external" href="https://hub.docker.com">https://hub.docker.com</a>
 * Heroku : <a class="reference external" href="https://www.heroku.com">https://www.heroku.com</a></p>
@@ -119,29 +119,29 @@
 </thead>
 <tbody>
 <tr class="row-even"><td><p>DOCKER_PASSWORD</p></td>
-<td><p>votre_mot_de_passe_dockerhub</p></td>
+<td><p>mot_de_passe_dockerhub</p></td>
 </tr>
 <tr class="row-odd"><td><p>DOCKER_USERNAME</p></td>
-<td><p>votre identifiant_dockerhub</p></td>
+<td><p>identifiant_dockerhub</p></td>
 </tr>
 <tr class="row-even"><td><p>DSN</p></td>
-<td><p>votre_cké_sentry-DSN</p></td>
+<td><p>cle_sentry-DSN</p></td>
 </tr>
 <tr class="row-odd"><td><p>HEROKU_APP_NAME</p></td>
-<td><p>nom_de_application_web</p></td>
+<td><p>lettings</p></td>
 </tr>
 <tr class="row-even"><td><p>HEROKU_TOKEN</p></td>
-<td><p>votre_heroku_token*</p></td>
+<td><p>heroku_token*</p></td>
 </tr>
 <tr class="row-odd"><td><p>IMAGE_NAME</p></td>
-<td><p>nom_de_l_image</p></td>
+<td><p>lettings_image</p></td>
 </tr>
 <tr class="row-even"><td><p>SECRET_KEY</p></td>
 <td><p>cle_secrete_django</p></td>
 </tr>
 </tbody>
 </table>
-<p>(*)pour obtenir HEROKU_TOKEN, taper dans votre terminal :</p>
+<p>(*)HEROKU_TOKEN est obtenu en tapant dans le terminal :</p>
 <p><code class="docutils literal notranslate"><span class="pre">heroku</span> <span class="pre">authorizations:create</span></code></p>
 <p>Cela va récupérer un jeton, que vous devez utiliser comme variable HEROKU-TOKEN.</p>
 <p>4 - <strong>Le pipeline se lance dès sa création puis à chaque commit sur Git hub.</strong></p>

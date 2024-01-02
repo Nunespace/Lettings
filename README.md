@@ -45,7 +45,7 @@ cd Lettings
 ```
 pipenv install
 ```
-4. Créer un fichier .env à la racine du projet, y mettre les variables suivantes :
+4. Créer un fichier .env à la racine du projet, y mettre les variables suivantes[^1] :
 ```
 SECRET_KEY=cle_secrète_django 
 DSN=cle_DSN_sentry
@@ -78,7 +78,7 @@ Le chapitre [*"Procédures de déploiement et de gestion de l’application" de 
 ### Lancement des tests
 Les tests de ce projet ont été écrits avec le framework pytest.
 
-Ils sont executables avec la commande [^1]: 
+Ils sont executables avec la commande [^2]: 
 ```
 pipenv run pytest
 ```
@@ -89,7 +89,7 @@ Ce projet contient la librairie Python Coverage.py qui fournit un rapport qui no
 ```
 pipenv run pytest --cov=.
 ```
-Un rapport HTML, plus détaillé, peut aussi être généré en tapant[^1] : 
+Un rapport HTML, plus détaillé, peut aussi être généré en tapant[^2] : 
 ```
 pipenv run pytest --cov=. --cov-report html
 ```
@@ -100,13 +100,13 @@ Un nouveau dossier *htmlcov* est ainsi créé à l'endroit où vous avez lancé 
 
 Le linting sur l'ensemble du code peut être exécuté avec Flake8.
 
-Exécutez, à partir de la  racine du projet, la commande suivante[^1] : 
+Exécutez, à partir de la  racine du projet, la commande suivante[^2] : 
 ```
 pipenv run flake8
 ```
 
-
-[^1]: Si vous utilisez *pip*, activer votre environnement virtuel et enlever *pipenv run* : 
+[^1]: Les clés secrètes Django et DSN de Sentry sont communiquées en dehors du dépôt Git hub
+[^2]: Si vous utilisez *pip*, activer votre environnement virtuel et enlever *pipenv run* : 
 
 
 

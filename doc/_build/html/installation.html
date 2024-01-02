@@ -50,7 +50,6 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Installation du projet</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#prerequis">Prérequis</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#installation-du-projet-sur-votre-machine-local">Installation du projet sur votre machine (local)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#creation-du-projet-sur-sentry-io">Création du projet sur sentry.io</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="quick_start.html">Guide de démarrage rapide</a></li>
@@ -113,11 +112,16 @@ et mettre <em>pip install</em> à la place de <em>pipenv install</em></p>
 </div>
 </li>
 <li><p>Créer un fichier .env à la racine du projet, y mettre les variables suivantes <a class="footnote-reference brackets" href="#f1" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SECRET_KEY</span><span class="o">=</span><span class="n">votre_cle_secrète_django</span>
-<span class="n">DSN</span><span class="o">=</span><span class="n">votre_cle_DSN_sentry</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SECRET_KEY</span><span class="o">=</span><span class="n">cle_secrète_django</span>
+<span class="n">DSN</span><span class="o">=</span><span class="n">cle_DSN_sentry</span>
 </pre></div>
 </div>
 </li>
+</ol>
+<ul class="simple">
+<li><p>voir ci-dessous <em>Récupération de la clé DSN de Sentry sentry.io</em></p></li>
+</ul>
+<ol class="arabic">
 <li><p>Démarrez l’application avec</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pipenv</span> <span class="n">run</span> <span class="n">python</span> <span class="n">manage</span><span class="o">.</span><span class="n">py</span> <span class="n">runserver</span>
 </pre></div>
@@ -140,25 +144,13 @@ et mettre <em>pip install</em> à la place de <em>pipenv install</em></p>
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 </aside>
 </aside>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">Pour créer une clé secrète Django, taper les commandes suivantes</span><a class="headerlink" href="#id3" title="Link to this code"></a></div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>    <span class="kn">from</span> <span class="nn">django.core.management.utils</span> <span class="kn">import</span> <span class="n">get_random_secret_key</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">get_random_secret_key</span><span class="p">())</span>
-</pre></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Les clés secrètes Django et DSN de Sentry sont communiquées en dehors du dépôt Git hub
+Pour récupérer clé DSN de Sentry sentry.io : aller sur le compte Sentry, puis dans le projet <em>lettings</em>, ouvrir <em>Project Settings</em></p>
+<p>Exemple de DSN :
+<a class="reference external" href="https://555555550faeed9ac552c37d085fec544&#64;o4506343489601536.ingest.sentry.io/99999999999">https://555555550faeed9ac552c37d085fec544&#64;o4506343489601536.ingest.sentry.io/99999999999</a></p>
 </div>
-</div>
-</section>
-<section id="creation-du-projet-sur-sentry-io">
-<h2>Création du projet sur sentry.io<a class="headerlink" href="#creation-du-projet-sur-sentry-io" title="Link to this heading"></a></h2>
-<p>1 - Sur votre compte Sentry, créer un projet Django</p>
-<p>2 - Récupérer la clé client DSN de votre projet sentry <a class="footnote-reference brackets" href="#f2" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a></p>
-<aside class="footnote-list brackets">
-<aside class="footnote brackets" id="f2" role="doc-footnote">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">2</a><span class="fn-bracket">]</span></span>
-<p>Exemple de DSN :</p>
-<p><a class="reference external" href="https://555555550faeed9ac552c37d085fec544&#64;o4506343489601536.ingest.sentry.io/99999999999">https://555555550faeed9ac552c37d085fec544&#64;o4506343489601536.ingest.sentry.io/99999999999</a></p>
-</aside>
-</aside>
 </section>
 </section>
 

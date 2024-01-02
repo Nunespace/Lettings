@@ -31,8 +31,10 @@ et mettre *pip install* à la place de *pipenv install*
 
 #. Créer un fichier .env à la racine du projet, y mettre les variables suivantes [#f1]_ ::
     
-    SECRET_KEY=votre_cle_secrète_django 
-    DSN=votre_cle_DSN_sentry
+    SECRET_KEY=cle_secrète_django 
+    DSN=cle_DSN_sentry
+
+* voir ci-dessous *Récupération de la clé DSN de Sentry sentry.io*
     
 #. Démarrez l'application avec ::
 
@@ -49,25 +51,14 @@ et mettre *pip install* à la place de *pipenv install*
 
 Pour les lancements ultérieurs du serveur, il suffit d'exécuter les étape 5 et 6 à partir du répertoire racine du projet.
 
-.. [#f1]
 
-.. code-block::
-   :caption: Pour créer une clé secrète Django, taper les commandes suivantes
+.. [#f1] 
 
-       from django.core.management.utils import get_random_secret_key
-       print(get_random_secret_key())
+.. note:: Les clés secrètes Django et DSN de Sentry sont communiquées en dehors du dépôt Git hub
+    Pour récupérer clé DSN de Sentry sentry.io : aller sur le compte Sentry, puis dans le projet *lettings*, ouvrir *Project Settings*
+    
+    Exemple de DSN :
+    https://555555550faeed9ac552c37d085fec544@o4506343489601536.ingest.sentry.io/99999999999
 
-
-
-Création du projet sur sentry.io 
---------------------------------
-
-1 - Sur votre compte Sentry, créer un projet Django
-
-2 - Récupérer la clé client DSN de votre projet sentry [#f2]_
-
-.. [#f2] Exemple de DSN :
-
- https://555555550faeed9ac552c37d085fec544@o4506343489601536.ingest.sentry.io/99999999999
 
 
