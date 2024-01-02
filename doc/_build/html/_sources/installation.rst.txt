@@ -34,7 +34,7 @@ et mettre *pip install* à la place de *pipenv install*
     SECRET_KEY=votre_cle_secrète_django 
     DSN=votre_cle_DSN_sentry
     
-#. Démarrer l'application avec ::
+#. Démarrez l'application avec ::
 
     pipenv run python manage.py runserver
 
