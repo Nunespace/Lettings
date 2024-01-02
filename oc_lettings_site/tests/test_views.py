@@ -13,7 +13,8 @@ def test_index_view():
     response = client.get(path)
     content = response.content.decode()
     print("content : ", content)
-    expected_content = '<h1 class="page-header-ui-title mb-3 display-6">Welcome to Holiday Homes</h1>'
+    expected_content = '<h1 class="page-header-ui-title mb-3 display-6">'
+    "Welcome to Holiday Homes</h1>"
     assert expected_content in content
     assert response.status_code == 200
     assertTemplateUsed(response, "index.html")
