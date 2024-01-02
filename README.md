@@ -1,77 +1,104 @@
-## Résumé
+# Application web Orange County Lettings 
 
-Site web d'Orange County Lettings
+***
+Orange County Lettings est une start-up dans le secteur de la location de biens immobiliers. La start-up est en pleine phase d’expansion aux États-Unis. 
+Elle souhaite améliorer son site tant sur le code que sur le déploiement.
 
-## Développement local
+## Fonctionnalités de l'application
 
-### Prérequis
+L'application permettra de gérer une base de données pour stocker et manipuler de manière sécurisée les informations de leurs clients, ainsi que les contrats et les événements qu'Epic Events organise.
+L’application est faite en ligne de commande. Le principe du moindre privilège est appliqué lors de l'attribution de l'accès aux données.
+Une journalisation est mise en oeuvre avec Sentry pour:
+- toutes les exceptions inattendues, 
+- chaque création/modiﬁcation d’un collaborateur,
+- la signature d’un contrat.
 
-- Compte GitHub avec accès en lecture à ce repository
-- Git CLI
-- SQLite3 CLI
-- Interpréteur Python, version 3.6 ou supérieure
+ 
+## Configuration actuelle
 
-Dans le reste de la documentation sur le développement local, il est supposé que la commande `python` de votre OS shell exécute l'interpréteur Python ci-dessus (à moins qu'un environnement virtuel ne soit activé).
+L’application nécessite un fichier config.ini non présent dans ce dépôt github.
 
-### macOS / Linux
+## Prérequis
 
-#### Cloner le repository
+L'application aura besoin de **Python** (version 3.12), **Git** et **Pipenv** pour fonctionner. Si besoin, vous pouvez les installer en suivant les instructions sur [cette page](doc/installation_python-git-pipenv.md).
 
-- `cd /path/to/put/project/in`
-- `git clone https://github.com/OpenClassrooms-Student-Center/Python-OC-Lettings-FR.git`
 
-#### Créer l'environnement virtuel
+## Installation
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `python -m venv venv`
-- `apt-get install python3-venv` (Si l'étape précédente comporte des erreurs avec un paquet non trouvé sur Ubuntu)
-- Activer l'environnement `source venv/bin/activate`
-- Confirmer que la commande `python` exécute l'interpréteur Python dans l'environnement virtuel
-`which python`
-- Confirmer que la version de l'interpréteur Python est la version 3.6 ou supérieure `python --version`
-- Confirmer que la commande `pip` exécute l'exécutable pip dans l'environnement virtuel, `which pip`
-- Pour désactiver l'environnement, `deactivate`
+Cette application exécutable localement peut être installée à l'aide de pipenv en suivant les étapes décrites ci-dessous.
+> [!NOTE]  
+> Si vous souhaitez utiliser *pip* à la place de *pipenv*, vous diposez du fichier *requirements.txt* pour installer toutes les dépendances du projet. Il vous faudra ensuite activer vous-même l'environnement virtuel (dans ce cas enlever "pipenv" ou "pipenv run" de toutes les commandes),
+et mettre *pip install* à la place de *pipenv install*
 
-#### Exécuter le site
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `pip install --requirement requirements.txt`
-- `python manage.py runserver`
-- Aller sur `http://localhost:8000` dans un navigateur.
-- Confirmer que le site fonctionne et qu'il est possible de naviguer (vous devriez voir plusieurs profils et locations).
+#. Ouvrez le **terminal** et tapez ::
+```
+git clone https://github.com/Nunespace/Lettings.git
+```
 
-#### Linting
+#. Placez-vous dans le répertoire Lettings ::
+```
+cd Lettings
+```
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `flake8`
+#. Installez les dépendances du projet ::
+```
+pipenv install
+```
+#. Créer un fichier .env à la racine du projet, y mettre les variables suivantes [#f1]_ ::
+```
+SECRET_KEY=cle_secrète_django 
+DSN=cle_DSN_sentry
+```
+    
+#. Démarrer l'application avec ::
+```
+pipenv run python manage.py runserver
+```
+#. Ouvrez votre navigateur et entrez l’URL comme indiqué sur le terminal pour démarrer l'application::
 
-#### Tests unitaires
+http://127.0.0.1:8000/
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- `source venv/bin/activate`
-- `pytest`
+#. Pour quitter le serveur, appuyez sur *CTRL+C*
 
-#### Base de données
 
-- `cd /path/to/Python-OC-Lettings-FR`
-- Ouvrir une session shell `sqlite3`
-- Se connecter à la base de données `.open oc-lettings-site.sqlite3`
-- Afficher les tables dans la base de données `.tables`
-- Afficher les colonnes dans le tableau des profils, `pragma table_info(Python-OC-Lettings-FR_profile);`
-- Lancer une requête sur la table des profils, `select user_id, favorite_city from
-  Python-OC-Lettings-FR_profile where favorite_city like 'B%';`
-- `.quit` pour quitter
+Pour les lancements ultérieurs du serveur, il suffit d'exécuter les étape 5 et 6 à partir du répertoire racine du projet.
 
-#### Panel d'administration
+## Documentation
 
-- Aller sur `http://localhost:8000/admin`
-- Connectez-vous avec l'utilisateur `admin`, mot de passe `Abc1234!`
+La documentation complète de ce projet est consultable ici : [Documentation](https://lettings17.readthedocs.io/fr/latest/)
 
-### Windows
+## Déploiement
 
-Utilisation de PowerShell, comme ci-dessus sauf :
+Le chapitre [*"Procédures de déploiement et de gestion de l’application" de la documentation*](https://lettings17.readthedocs.io/fr/latest/deployment_and_management.html) présente : 
+● un récapitulatif haut niveau du fonctionnement du déploiement ;
+● la configuration requise ;
+● les étapes nécessaires pour effectuer le déploiement.
 
-- Pour activer l'environnement virtuel, `.\venv\Scripts\Activate.ps1` 
-- Remplacer `which <my-command>` par `(Get-Command <my-command>).Path`
+## Tests
+
+Les tests de ce projet ont été écrits avec le framework pytest.
+
+### Lancement des tests
+Les tests sont executables avec la commande : 
+```
+pipenv run pytest
+```
+
+### Couverture de test
+
+Ce projet contient la librairie Python Coverage.py qui fournit un rapport qui nous donne le pourcentage de couverture de ligne par fichier source de couverture. Ce rapport peut être obtenu avec cette commande : 
+```
+pipenv run pytest --cov=.
+```
+Un rapport HTML, plus détaillé, peut aussi être généré en tapant : 
+```
+pipenv run pytest --cov=. --cov-report html
+```
+Nn nouveau dossier *htmlcov* est ainsi créé à l'endroit où vous avez lancé la commande. Avec votre navigateur, ouvrez le fichier *index.html*  qui contient un résumé du rapport de couverture. À partir de cette page, vous pourrez naviguer à travers les différents fichiers afin d’avoir le détail sur la couverture.
+
+
+
+
+
+

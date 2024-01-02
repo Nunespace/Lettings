@@ -6,12 +6,13 @@ from pytest_django.asserts import assertTemplateUsed
 
 client = Client()
 
+
 @pytest.mark.django_db
 def test_index_view(address1_fixture, address2_fixture):
-    letting1 = Letting.objects.create(
+    Letting.objects.create(
         title="The dream place", address=address1_fixture
     )
-    letting2 = Letting.objects.create(
+    Letting.objects.create(
         title="The dark place", address=address2_fixture
     )
     path = reverse("lettings:index")
@@ -35,5 +36,3 @@ def test_letting_view(address1_fixture):
     assert expected_content in content
     assert response.status_code == 200
     assertTemplateUsed(response, "lettings/letting.html")
-
-

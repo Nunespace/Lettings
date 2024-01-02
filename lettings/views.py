@@ -4,9 +4,9 @@ from django.http import Http404
 from django.shortcuts import render
 from .models import Letting
 
-# le nom du logger se rapporte à la hiérarchie du paquet et des modules, 
-# et il est évident de voir où un événement a été enregistré simplement en regardant le nom du logger:
-# en cas d'erreur, le logger ici sera lettings.views
+# le nom du logger se rapporte à la hiérarchie du paquet et des modules,
+# on peut ainsi voir où un événement a été enregistré simplement en regardant
+# le nom du logger: en cas d'erreur, le logger ici sera lettings.views
 logger = logging.getLogger(__name__)
 
 
@@ -21,7 +21,7 @@ def index(request):
 
 
 def letting(request, letting_id):
-    """ 
+    """
     Gère l'affichage du détail d'une location sur la page d'une location (letting)
     Retourne une page letting ou la page personnalisée 404 en cas d'erreur d'id
     """

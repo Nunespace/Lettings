@@ -9,6 +9,7 @@ def user1(django_user_model):
     )
     return user
 
+
 @pytest.fixture
 def user2(django_user_model):
     user = django_user_model.objects.create_user(
@@ -24,6 +25,7 @@ def profile1_fixture(user1):
         favorite_city="Dream team city",
     )
     return profile
+
 
 @pytest.fixture
 def profile2_fixture(user2):

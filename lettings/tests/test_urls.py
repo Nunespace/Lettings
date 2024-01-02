@@ -1,6 +1,6 @@
 import pytest
 from django.urls import reverse, resolve
-from lettings.models import Address, Letting
+from lettings.models import Letting
 from django.test import Client
 
 client = Client()
@@ -8,10 +8,10 @@ client = Client()
 
 @pytest.mark.django_db
 def test_index_url(address1_fixture, address2_fixture):
-    letting1 = Letting.objects.create(
+    Letting.objects.create(
         title="The dream place", address=address1_fixture
     )
-    letting2 = Letting.objects.create(
+    Letting.objects.create(
         title="The dark place", address=address2_fixture
     )
     path = reverse("lettings:index")

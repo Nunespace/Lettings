@@ -40,7 +40,7 @@ Déploiement de l'application à l'aide de la pipeline CI/CD de circleci
 
 Cela va récupérer un jeton, que vous devez utiliser comme variable HEROKU-TOKEN.
 
-4 - La pipeline se lance dès sa création puis à chaque commit sur Git hub.
+4 - **Le pipeline se lance dès sa création puis à chaque commit sur Git hub.**
 
 Le site web est alors en ligne à cette url : 
 

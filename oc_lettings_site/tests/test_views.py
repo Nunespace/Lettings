@@ -17,11 +17,3 @@ def test_index_view():
     assert expected_content in content
     assert response.status_code == 200
     assertTemplateUsed(response, "index.html")
-
-"""
-@pytest.mark.django_db
-def test_handler404_view():
-    path = reverse("lettings:letting", kwargs={"letting_id": 999})
-    response = client.get(path)
-    assert response.status_code == 404
-"""

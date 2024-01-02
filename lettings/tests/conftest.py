@@ -1,5 +1,6 @@
 import pytest
-from lettings.models import Address, Letting
+from lettings.models import Address
+
 
 @pytest.fixture
 def address1_fixture():
@@ -12,6 +13,7 @@ def address1_fixture():
         country_iso_code="USA",
     )
     return address
+
 
 @pytest.fixture
 def address2_fixture():

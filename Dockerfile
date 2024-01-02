@@ -9,7 +9,8 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 ARG SECRET_KEY
 ARG DSN
-# Les deux variavles SECRET_KEY et DSN Sont à retirer en cas de construction en local(développement)
+# Les deux variavles SECRET_KEY et DSN sont à renseigner en cas de construction en local(développement) avec cette commande : 
+# docker build -t lettings --build-arg SECRET_KEY="django_key" --build-arg DSN="dsn_key" .
 ENV SECRET_KEY=${SECRET_KEY}
 ENV DSN=${DSN}
 
@@ -31,7 +32,4 @@ RUN python manage.py collectstatic --noinput
 EXPOSE 8000
 
 
-#CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
-#CMD gunicorn oc-lettings-site.wsgi:application --bind 0.0.0.0:8000
-#CMD gunicorn oc-lettings-site.wsgi:application --bind 0.0.0.0:$PORT
 CMD gunicorn --bind 0.0.0.0:$PORT oc_lettings_site.wsgi

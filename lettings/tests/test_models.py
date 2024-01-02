@@ -5,6 +5,7 @@ from lettings.models import Address, Letting
 
 client = Client()
 
+
 @pytest.mark.django_db
 def test_adress_model():
     address = Address.objects.create(

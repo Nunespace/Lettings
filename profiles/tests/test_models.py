@@ -5,6 +5,7 @@ from profiles.models import Profile
 
 client = Client()
 
+
 @pytest.mark.django_db
 def test_profile_model(user1):
     profile = Profile.objects.create(
