@@ -25,7 +25,7 @@ L'application aura besoin de **Python** (version 3.12), **Git** et **Pipenv** po
 
 ## Installation
 
-Cette application exécutable localement peut être installée à l'aide de pipenv en suivant les étapes décrites ci-dessous.
+Cette application exécutable localement peut être installée à l'aide de *pipenv* en suivant les étapes décrites ci-dessous.
 > [!NOTE]  
 > Si vous souhaitez utiliser *pip* à la place de *pipenv*, vous diposez du fichier *requirements.txt* pour installer toutes les dépendances du projet. Il vous faudra ensuite activer vous-même l'environnement virtuel (dans ce cas enlever "pipenv" ou "pipenv run" de toutes les commandes),
 et mettre *pip install* à la place de *pipenv install*
@@ -85,11 +85,11 @@ pipenv run pytest
 
 ### Couverture de test
 
-Ce projet contient la librairie Python Coverage.py qui fournit un rapport qui nous donne le pourcentage de couverture de ligne par fichier source de couverture. Ce rapport peut être obtenu avec cette commande : 
+Ce projet contient la librairie Python Coverage.py qui fournit un rapport qui nous donne le pourcentage de couverture de ligne par fichier source de couverture. Ce rapport peut être obtenu avec cette commande[^1] : 
 ```
 pipenv run pytest --cov=.
 ```
-Un rapport HTML, plus détaillé, peut aussi être généré en tapant : 
+Un rapport HTML, plus détaillé, peut aussi être généré en tapant[^1] : 
 ```
 pipenv run pytest --cov=. --cov-report html
 ```
