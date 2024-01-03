@@ -44,9 +44,11 @@ Déploiement de l'application à l'aide de la pipeline CI/CD de circleci
 
 Le site web est alors en ligne à cette url : 
 
-https://nom_de_votre_application-nombre_attribué_par_heroku.herokuapp.com
+https://lettings-972532108750.herokuapp.com
 
-Exemple : https://lettings-972532108750.herokuapp.com
+Le pipeline CI/CD et ses builds sont visibles sur cette page : 
+
+https://app.circleci.com/pipelines/github/Nunespace/Lettings 
 
 
 Gestion de l'application
