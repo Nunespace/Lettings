@@ -22,7 +22,7 @@ def profile(request, username):
     try:
         profile = Profile.objects.get(user__username=username)
     except Profile.DoesNotExist:
-        sentry_sdk.capture_message("Cette page n'existe pas", level="error")
+        sentry_sdk.capture_message("Cette page n'existe pas!", level="error")
         logger.error("Cette page n'existe pas")
         raise Http404("This profile does not exist")
     context = {"profile": profile}

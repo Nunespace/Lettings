@@ -9,7 +9,7 @@ def index(request):
 
 def handler404(request, exception):
     "Renvoie une page personnalisée 404 en cas d'erreur de page non trouvée"
-    capture_message("Page not found!", level="error")
+    capture_message("This page was not found.", level="error")
     return render(request, '404.html', status=404)
 
 

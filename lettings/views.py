@@ -28,7 +28,7 @@ def letting(request, letting_id):
     try:
         letting = Letting.objects.get(id=letting_id)
     except Letting.DoesNotExist:
-        sentry_sdk.capture_message("Cette page n'existe pas", level="error")
+        sentry_sdk.capture_message("Cette page n'existe pas!", level="error")
         logger.error("Cette page n'existe pas")
         raise Http404("This letting does not exist")
     context = {
