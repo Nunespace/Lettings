@@ -15,5 +15,5 @@ def handler404(request, exception):
 
 def handler500(request):
     "Renvoie une page personnalisée 500 en cas d'erreur de serveur interne"
-    capture_message("Profile not found!", level="error")
+    capture_message("Page not found : error server!", level="error")
     return render(request, '500.html', status=500)
