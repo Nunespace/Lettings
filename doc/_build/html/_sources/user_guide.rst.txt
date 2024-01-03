@@ -15,3 +15,5 @@ Guide d’utilisation (avec des cas d’utilisation)
 Chaque page dispose d'un bouton accueil(Home) et/ou retour (back)
 
 .. image:: _static/home.png
+
+* En cas de saisie d'une url erronée ou en cas d'erreur interne au serveur, une page personnalisée d'erreur 404 ou 500 s'ouvre avec les boutons *Back* et *Home*.   

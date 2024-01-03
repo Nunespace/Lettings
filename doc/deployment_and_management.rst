@@ -5,8 +5,11 @@ Prérequis
 ---------
 
 Disposer des identifiants et mots de passe pour :
+
 * circleci : https://circleci.com/
+
 * docker hub : https://hub.docker.com
+
 * Heroku : https://www.heroku.com
 
 .. Note:: Voir aussi :doc:`Technologies <technologies>`

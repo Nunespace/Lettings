@@ -32,13 +32,12 @@ et mettre *pip install* à la place de *pipenv install*
     SECRET_KEY=cle_secrète_django 
     DSN=cle_DSN_sentry
 
-* voir ci-dessous *Récupération de la clé DSN de Sentry sentry.io*
     
-#. Démarrez l'application avec ::
+#. Démarrez le serveur avec ::
 
     pipenv run python manage.py runserver
 
-#. Ouvrez votre navigateur et entrez l’URL comme indiqué sur le terminal pour démarrer l'application::
+#. Ouvrez votre navigateur et entrez l’URL comme indiqué sur le terminal pour démarrer l'application web::
 
     http://127.0.0.1:8000/
 

@@ -47,11 +47,11 @@ SECRET_KEY=cle_secrète_django
 DSN=cle_DSN_sentry
 ```
     
-5. Démarrez l'application avec :
+5. Démarrez le serveur avec :
 ```
 pipenv run python manage.py runserver
 ```
-6. Ouvrez votre navigateur et entrez l’URL comme indiqué sur le terminal pour démarrer l'application :
+6. Ouvrez votre navigateur et entrez l’URL comme indiqué sur le terminal pour démarrer l'application web :
 
 http://127.0.0.1:8000/
 
