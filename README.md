@@ -62,11 +62,13 @@ Pour les lancements ultérieurs du serveur, il suffit d'exécuter les étape 5 e
 
 ## Documentation
 
-La documentation complète de ce projet est consultable ici : [Documentation](https://lettings17.readthedocs.io/fr/latest/)
+La documentation complète de ce projet est consultable ici : [Documentation](https://lettings17.readthedocs.io/fr/latest/).
 
 ## Déploiement
 
 Le chapitre [*"Procédures de déploiement et de gestion de l’application" de la documentation*](https://lettings17.readthedocs.io/fr/latest/deployment_and_management.html) présente un récapitulatif haut niveau du fonctionnement du déploiement, la configuration requise ainsi que les étapes nécessaires pour l'effectuer.
+
+Le pipeline CI/CD et ses builds sont visibles sur cette page : [Pipeline Lettings](https://app.circleci.com/pipelines/github/Nunespace/Lettings).
 
 ## Tests et linting
 
