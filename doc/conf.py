@@ -37,8 +37,11 @@ language = "fr"
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
-html_theme = 'sphinx_rtd_theme'
+html_theme = "sphinx_rtd_theme"
 
-html_theme_options = {}
-
+html_theme_options = {
+    "display_version": False,
+    "style_external_links": True,
+}
+html_logo = "_static/logo.png"
 html_static_path = ["_static"]
