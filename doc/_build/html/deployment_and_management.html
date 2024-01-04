@@ -54,8 +54,7 @@
 <li class="toctree-l1"><a class="reference internal" href="api.html">Description des interfaces de programmation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="user_guide.html">Guide d’utilisation</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Procédures de déploiement et de gestion de l'application.</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#prerequis">Prérequis</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#deploiement-de-l-application-a-l-aide-de-la-pipeline-ci-cd-de-circleci">Déploiement de l’application à l’aide de la pipeline CI/CD de circleci</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deploiement-de-l-application-a-l-aide-de-la-pipeline-ci-cd-de-circleci">Déploiement de l’application à l’aide de la pipeline CI/CD de Circleci</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#gestion-de-l-application">Gestion de l’application</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#surveillance-des-erreurs">Surveillance des erreurs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#gestion-de-la-base-de-donnees">Gestion de la base de données</a></li>
@@ -91,24 +90,14 @@
              
   <section id="procedures-de-deploiement-et-de-gestion-de-l-application">
 <h1>Procédures de déploiement et de gestion de l’application<a class="headerlink" href="#procedures-de-deploiement-et-de-gestion-de-l-application" title="Link to this heading"></a></h1>
-<section id="prerequis">
-<h2>Prérequis<a class="headerlink" href="#prerequis" title="Link to this heading"></a></h2>
-<p>Disposer des identifiants et mots de passe pour :</p>
-<ul class="simple">
-<li><p>circleci : <a class="reference external" href="https://circleci.com/">https://circleci.com/</a></p></li>
-<li><p>docker hub : <a class="reference external" href="https://hub.docker.com">https://hub.docker.com</a></p></li>
-<li><p>Heroku : <a class="reference external" href="https://www.heroku.com">https://www.heroku.com</a></p></li>
-</ul>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Voir aussi <a class="reference internal" href="technologies.html"><span class="doc">Technologies</span></a></p>
 </div>
-</section>
 <section id="deploiement-de-l-application-a-l-aide-de-la-pipeline-ci-cd-de-circleci">
-<h2>Déploiement de l’application à l’aide de la pipeline CI/CD de circleci<a class="headerlink" href="#deploiement-de-l-application-a-l-aide-de-la-pipeline-ci-cd-de-circleci" title="Link to this heading"></a></h2>
-<p>1 - Installer Heroku CLI : <a class="reference external" href="https://devcenter.heroku.com/articles/heroku-cli">https://devcenter.heroku.com/articles/heroku-cli</a></p>
-<p>2 - Créer un projet sur circleci avec une dépot github</p>
-<p>3 - Enregistrer les variables d’environnements du projet sur circleci :</p>
+<h2>Déploiement de l’application à l’aide de la pipeline CI/CD de Circleci<a class="headerlink" href="#deploiement-de-l-application-a-l-aide-de-la-pipeline-ci-cd-de-circleci" title="Link to this heading"></a></h2>
+<p>Le projet <em>lettings</em> sur <a class="reference external" href="https://circleci.com/vcs-authorize/">Circleci</a> est lié au dépot github.</p>
+<p>Les variables d’environnements du projet enregistrées dans <em>Project Settings</em> sont les suivantes:</p>
 <table class="docutils align-default" id="id1">
 <caption><span class="caption-text">Variables d’environnement</span><a class="headerlink" href="#id1" title="Link to this table"></a></caption>
 <colgroup>
@@ -145,8 +134,14 @@
 </tbody>
 </table>
 <p>(*)L’API key est indiquée dans le <a class="reference external" href="https://dashboard.heroku.com/account">compte Heroku</a> dans <em>Account Settings</em>.</p>
-<p>4 - <strong>Le pipeline se lance dès sa création puis à chaque commit sur Git hub.</strong></p>
-<p>Le site web est alors en ligne à cette url :</p>
+<p>Le pipeline est configuré par le fichier <em>config.yml</em> situé dans le répertoire <em>.circleci</em> :</p>
+<ol class="arabic simple">
+<li><p>Les tests du projets sont lancés après l’installation des dépendances ;</p></li>
+<li><p>Si les tests sont réussis, une image docker <em>lettings_image</em> est construite et poussée (push) ver le registre docker hub ;</p></li>
+<li><p>Si l’image est bien construite, le déploiement se réalise sur héroku.</p></li>
+</ol>
+<p><strong>Le pipeline se lance dès sa création puis à chaque commit sur Git hub.</strong>.</p>
+<p>Le site web est en ligne à cette url publique :</p>
 <p><a class="reference external" href="https://lettings-972532108750.herokuapp.com">https://lettings-972532108750.herokuapp.com</a></p>
 <p>Le pipeline CI/CD et ses builds sont visibles sur cette page :</p>
 <p><a class="reference external" href="https://app.circleci.com/pipelines/github/Nunespace/Lettings">https://app.circleci.com/pipelines/github/Nunespace/Lettings</a></p>
@@ -156,19 +151,18 @@
 <section id="surveillance-des-erreurs">
 <h3>Surveillance des erreurs<a class="headerlink" href="#surveillance-des-erreurs" title="Link to this heading"></a></h3>
 <p>Sentry est utilisé comme outil de surveillance des erreurs.
-Chaque erreur est répertoriée dans le dossier <em>Issues</em> du projet sur votre compte Sentry : <a class="reference external" href="https://sentry.io">https://sentry.io</a></p>
+Chaque erreur est répertoriée dans le dossier <em>Issues</em> du projet sur Sentry : <a class="reference external" href="https://sentry.io">https://sentry.io</a></p>
 </section>
 <section id="gestion-de-la-base-de-donnees">
 <h3>Gestion de la base de données<a class="headerlink" href="#gestion-de-la-base-de-donnees" title="Link to this heading"></a></h3>
 <p>1 - Les données de l’API peuvent être administrées par le super-utilisateur avec le site d’administration de Django :</p>
-<p><a class="reference external" href="https://heroku_app_name-nombre_attribue_par_heroku.herokuapp.com/admin/">https://heroku_app_name-nombre_attribue_par_heroku.herokuapp.com/admin/</a></p>
-<p>Exemple : <a class="reference external" href="https://lettings-972532108750.herokuapp.com/admin/">https://lettings-972532108750.herokuapp.com/admin/</a></p>
-<p>2 - Entrer votre identifiant et votre mot de passe pour accéder au site d’administration de Django : ce site permet de <a class="reference external" href="https://openclassrooms.com/fr/courses/7172076-debutez-avec-le-framework-django/7516605-effectuez-des-operations-crud-dans-ladministration-de-django">gérer toutes les opérations CRUD</a> sur les ressources de l’API.</p>
+<p><a class="reference external" href="https://lettings-972532108750.herokuapp.com/admin/">https://lettings-972532108750.herokuapp.com/admin/</a></p>
+<p>2 - Après avoir renseigné votre identifiant et votre mot de passe, ce site permet de <a class="reference external" href="https://openclassrooms.com/fr/courses/7172076-debutez-avec-le-framework-django/7516605-effectuez-des-operations-crud-dans-ladministration-de-django">gérer toutes les opérations CRUD</a> sur les ressources de l’API.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Voir également <a class="reference internal" href="api.html"><span class="doc">Interface de programmation d’application</span></a></p>
 </div>
-<p>Dans le cadre de la formation Python, un superutilisateur est déjà créé dans la base de données Sqlite3 du projet.</p>
+<p>Dans le cadre de la formation Python, un super-utilisateur est déjà créé dans la base de données Sqlite3 du projet.</p>
 </section>
 </section>
 </section>

@@ -26,6 +26,7 @@ Docker Inc distribue 3 versions de Docker différentes :
 
 Pour le déploiement sur Heroku
 ------------------------------
-
 Le déploiement de l'application se réalise sur l'hébergeur `HEROKU <https://www.heroku.com>`_.
 
+L’interface de ligne de commande `Heroku (CLI) <https://devcenter.heroku.com/articles/heroku-cli>`_ est une partie essentielle de l’utilisation de Heroku. Avec elle, vous pouvez créer et gérer des applications Heroku directement à partir du terminal.
+ 

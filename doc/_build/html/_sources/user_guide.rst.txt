@@ -12,7 +12,7 @@ Guide d’utilisation (avec des cas d’utilisation)
 
 * Consulter une location : cliquer sur une location pour accéder à son adresse
 
-Chaque page dispose d'un bouton accueil(Home) et/ou retour (back)
+Chaque page dispose d'un bouton accueil (*Home*) et/ou retour (*Back*)
 
 .. image:: _static/home.png
 
