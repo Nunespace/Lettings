@@ -37,13 +37,10 @@ et mettre *pip install* à la place de *pipenv install*
 
     pipenv run python manage.py runserver
 
-#. Ouvrez votre navigateur et entrez l’URL comme indiqué sur le terminal pour démarrer l'application web::
+#. Ouvrez votre navigateur et entrez l’URL comme indiqué sur le terminal pour démarrer l'application web : http://127.0.0.1:8000/ ou http://localhost:8000/
 
-    http://127.0.0.1:8000/
 
-#. Pour quitter le serveur, appuyez sur::
-
-    CTRL+C
+#. Pour quitter le serveur, appuyez sur *CTRL+C*
 
 
 Pour les lancements ultérieurs du serveur, il suffit d'exécuter les étape 5 et 6 à partir du répertoire racine du projet.
@@ -52,10 +49,6 @@ Pour les lancements ultérieurs du serveur, il suffit d'exécuter les étape 5 e
 .. [#f1] 
 
 .. note:: Les clés secrètes Django et DSN de Sentry sont communiquées en dehors du dépôt Git hub
-    Pour récupérer clé DSN de Sentry sentry.io : aller sur le compte Sentry, puis dans le projet *lettings*, ouvrir *Project Settings*
+    Pour récupérer clé DSN de Sentry : aller sur le `compte Sentry <https://sentry.io>`_, puis dans le projet *lettings*, ouvrir *Project Settings*.
     
-    Exemple de DSN :
-    https://555555550faeed9ac552c37d085fec544@o4506343489601536.ingest.sentry.io/99999999999
-
-
-
+   
