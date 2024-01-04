@@ -85,7 +85,7 @@ pipenv run pytest
 
 ### Couverture de test
 
-Ce projet contient la librairie Python Coverage.py qui fournit un rapport qui nous donne le pourcentage de couverture de ligne par fichier source de couverture. Ce rapport peut être obtenu avec cette commande[^1] : 
+Ce projet contient la librairie Python Coverage.py qui fournit un rapport qui nous donne le pourcentage de couverture de ligne par fichier source de couverture. Ce rapport peut être obtenu avec cette commande[^2] : 
 ```
 pipenv run pytest --cov=.
 ```
